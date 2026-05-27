@@ -3,8 +3,8 @@
 # Embedding-weighted transfer learning pipeline (Model 2).
 #
 # Uses GOOGLE/SATELLITE_EMBEDDING/V1/ANNUAL (64-band foundation model
-# embeddings) to compute cosine similarity between each global Janousek
-# core and the local AOI, replacing the Wadoux RF domain classifier used
+# embeddings) to compute cosine similarity between each global soil profile
+# and the local AOI, replacing the Wadoux RF domain classifier used
 # in _targets_transfer.R.
 #
 # Run with:
@@ -52,7 +52,7 @@ EMB_YEARS   <- 2023:2025   # years to average for the embedding
 list(
 
   # ── Configuration ──────────────────────────────────────────────────────────
-  tar_target(config_file_emb, "blue_carbon_config.R", format = "file"),
+  tar_target(config_file_emb, "soil_carbon_config.R", format = "file"),
   tar_target(cfg_emb, load_config(config_file_emb)),
   tar_target(covar_file_emb, cfg_emb$COVARIATE_RASTER, format = "file"),
 
@@ -74,7 +74,7 @@ list(
   ),
   tar_target(
     global_covar_file_emb,
-    "Pre-Analysis Data Preparation/data_raw/CorePoints_Covariates_BC_Canada.csv",
+    "Pre-Analysis Data Preparation/data_raw/TerrestrialSOC_GlobalCorePoints_Covariates.csv",
     format = "file"
   ),
 

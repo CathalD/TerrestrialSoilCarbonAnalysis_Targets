@@ -156,7 +156,7 @@ extract_aoi_embedding_raster <- function(covar_file, gee_project = NULL,
   out_path <- file.path(out_dir, "aoi_embedding_raster.tif")
 
   # GEE's getDownloadURL limit is 48 MB per request. A 64-band image at 25 m
-  # over a typical coastal AOI exceeds this. Split into chunks of 16 bands
+  # over a typical project AOI exceeds this. Split into chunks of 16 bands
   # (~18 MB each), download each chunk, then stack into a single GeoTIFF.
   band_names  <- emb_img$bandNames()$getInfo()
   n_bands     <- length(band_names)

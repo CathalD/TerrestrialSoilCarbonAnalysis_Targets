@@ -1,5 +1,5 @@
 ---
-title: "Blue Carbon Analysis — Step 3"
+title: "Terrestrial Soil Carbon — Step 3"
 subtitle: "Random Forest Spatial Prediction"
 date: today
 engine: knitr
@@ -36,15 +36,15 @@ full project area using remote sensing covariates (the multi-band GEE raster).
 Each pixel in the output maps receives a predicted carbon stock value
 (kg C/m²) based on the relationship the model learned from the field cores.
 
-**Outputs:** one prediction map per VM0033 depth interval, plus a total stock
-map summed to 1 m depth. These maps can be used to identify where carbon is
-concentrated and to produce spatially-explicit total stock estimates.
+**Outputs:** one prediction map per depth interval (0–15, 15–30, 30–60, 60–100 cm),
+plus a total stock map summed to 1 m depth. These maps can be used to identify
+where carbon is concentrated and to produce spatially-explicit total stock estimates.
 
 ## Model performance
 
 ### What good performance looks like
 
-The VM0033 standard targets **≤ 20% relative error at 90% confidence**.
+IPCC Tier 2 reporting targets **≤ 20% relative error at 90% confidence**.
 As a rough guide, this corresponds to:
 
 | Metric | Target | Acceptable |
@@ -54,8 +54,8 @@ As a rough guide, this corresponds to:
 | OOB error (when n < 10) | Not reliable — collect more cores | — |
 
 **Minimum recommended sample size:** ~30 cores per stratum for a model
-that meets VM0033 precision. With fewer cores, the model is fitting the
-training data rather than learning a generalizable spatial pattern.
+that meets IPCC Tier 2 precision. With fewer cores, the model is fitting
+the training data rather than learning a generalizable spatial pattern.
 Treat predictions as indicative until more cores are added.
 
 ### Current results
@@ -93,15 +93,15 @@ if (nrow(rf_models$cv_metrics) == 0) {
   if (best_r2 < 0.6 || n_cores < 10) {
     cat(paste0(
       "> **Interpretation:** With ", n_cores, " core(s), the model does not yet meet ",
-      "VM0033 precision targets. Current predictions show the spatial pattern of the ",
+      "IPCC Tier 2 precision targets. Current predictions show the spatial pattern of the ",
       "remote sensing covariates weighted by the limited core data — useful for ",
       "identifying priority sampling locations, but not yet suitable for carbon ",
-      "credit reporting. **Aim for ≥ 30 cores per stratum.**\n"
+      "stock reporting. **Aim for ≥ 30 cores per stratum.**\n"
     ))
   } else {
     cat(paste0(
       "> **Interpretation:** Model R² = ", round(best_r2, 2),
-      " — predictions are approaching VM0033 precision targets.\n"
+      " — predictions are approaching IPCC Tier 2 precision targets.\n"
     ))
   }
 }
@@ -111,23 +111,23 @@ if (nrow(rf_models$cv_metrics) == 0) {
 
 Which remote sensing layers drove the predictions most?
 Higher % increase in MSE means the model depends more heavily on that variable.
-★ marks bands with strong theoretical links to coastal carbon stocks in the literature.
+★ marks bands with strong theoretical links to terrestrial soil carbon in the literature.
 
-```{r fig.cap="Top predictors for total carbon stock. Variables without a ★ label are raw band codes — update BAND_LABELS in blue_carbon_config.R to add descriptions.", fig.height=7}
+```{r fig.cap="Top predictors for total carbon stock. Variables without a ★ label are raw band codes — update BAND_LABELS in soil_carbon_config.R to add descriptions.", fig.height=7}
 rf_importance_plot
 ```
 
 ## Predicted carbon stock maps
 
-### By VM0033 depth interval
+### By depth interval
 
-```{r fig.cap="Predicted carbon stock (kg C/m²) at each VM0033 depth interval.", fig.width=10, fig.height=8}
+```{r fig.cap="Predicted carbon stock (kg C/m²) at each IPCC depth interval (0–15, 15–30, 30–60, 60–100 cm).", fig.width=10, fig.height=8}
 rf_maps$depth_panel
 ```
 
 ### Total to 1 m depth
 
-```{r fig.cap="Total predicted carbon stock summed across all VM0033 depth intervals (kg C/m²)."}
+```{r fig.cap="Total predicted carbon stock summed across all depth intervals (kg C/m²)."}
 rf_maps$total
 ```
 

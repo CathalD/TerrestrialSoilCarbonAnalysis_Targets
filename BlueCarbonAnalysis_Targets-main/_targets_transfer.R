@@ -19,9 +19,9 @@ list(
              "Pre-Analysis Data Preparation/data_global/combined_layers_filtered.csv",
              format = "file"),
   tar_target(global_covar_file,
-             "Pre-Analysis Data Preparation/data_raw/CorePoints_Covariates_BC_Canada.csv",
+             "Pre-Analysis Data Preparation/data_raw/TerrestrialSOC_GlobalCorePoints_Covariates.csv",
              format = "file"),
-  tar_target(config_file_tl, "blue_carbon_config.R", format = "file"),
+  tar_target(config_file_tl, "soil_carbon_config.R", format = "file"),
 
   # ── CONFIGURATION ─────────────────────────────────────────────────────────
   tar_target(cfg_tl, load_config(config_file_tl)),
@@ -45,7 +45,7 @@ list(
              prepare_tl_data(cores_harmonized_tl, global_harmonized,
                              global_covar_file, covar_file_tl)),
 
-  # ── TRANSFER LEARNING MODELS (per VM0033 depth) ──────────────────────────
+  # ── TRANSFER LEARNING MODELS (per depth interval) ────────────────────────
   tar_target(tl_models, train_tl(tl_data, cfg_tl)),
 
   # ── SPATIAL PREDICTION RASTERS (4 bands per depth) ───────────────────────

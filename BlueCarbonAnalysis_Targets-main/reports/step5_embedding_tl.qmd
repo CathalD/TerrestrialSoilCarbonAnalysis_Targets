@@ -1,5 +1,5 @@
 ---
-title: "Blue Carbon Analysis — Step 5"
+title: "Terrestrial Soil Carbon — Step 5"
 subtitle: "Embedding-Weighted Transfer Learning (Model 2)"
 date: today
 engine: knitr
@@ -89,9 +89,15 @@ summary_df <- emb_tl_maps$summary
 
 summary_df |>
   mutate(
-    depth_interval = c("0–15 cm", "15–30 cm", "30–50 cm", "50–100 cm")[
-      match(depth_cm, c(7.5, 22.5, 40, 75))
-    ],
+    depth_interval = {
+      di <- cfg_emb$DEPTH_INTERVALS %||% cfg_emb$VM0033_DEPTH_INTERVALS
+      if (!is.null(di)) {
+        lbl <- paste0(di$depth_top, "–", di$depth_bottom, " cm")
+        lbl[match(depth_cm, di$depth_midpoint)]
+      } else {
+        as.character(depth_cm)
+      }
+    },
     bias_correction = sprintf("%+.3f", bias_correction),
     cv_r2_tl        = ifelse(is.na(cv_r2_tl),     "—", sprintf("%.3f", cv_r2_tl)),
     cv_r2_global    = ifelse(is.na(cv_r2_global),  "—", sprintf("%.3f", cv_r2_global)),
@@ -169,7 +175,7 @@ if (!is.null(step4)) {
 
 The embedding-weighted rasters are written to `outputs/transfer/` with the
 same 4-band structure as Step 4 (Global Prior, Transfer Final, Local Only,
-Difference per depth). Use **Transfer Final** for VM0033 reporting.
+Difference per depth). Use **Transfer Final** for carbon stock reporting.
 
 To generate 90% prediction intervals:
 
@@ -185,7 +191,7 @@ upper <- p + z * se
 **Next steps:**
 
 - Compare Step 4 and Step 5 spatial patterns — do they agree on high/low
-  carbon zones, or diverge in specific habitat types?
-- If embeddings improve LOCO CV RMSE, adopt as primary method for VM0033.
+  carbon zones, or diverge in specific land-use types?
+- If embeddings improve LOCO CV RMSE, adopt as primary method for IPCC Tier 2.
 - Consider Option 2 (cluster-based pixel-wise weights) if the AOI shows
   strong spatial heterogeneity in the embedding heatmap.

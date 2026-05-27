@@ -29,7 +29,7 @@ train_emb_tl <- function(tl_data, emb_weights, cfg) {
   suppressPackageStartupMessages({ library(dplyr); library(ranger) })
   set.seed(.TL_SEED)
 
-  depths    <- cfg$VM0033_DEPTH_MIDPOINTS %||% c(7.5, 22.5, 40, 75)
+  depths    <- cfg$DEPTH_MIDPOINTS %||% cfg$VM0033_DEPTH_MIDPOINTS %||% c(7.5, 22.5, 45, 80)
   bv_full   <- tl_data$bridge_full
   bv_red    <- tl_data$bridge_reduced
   g_medians <- tl_data$global_medians
