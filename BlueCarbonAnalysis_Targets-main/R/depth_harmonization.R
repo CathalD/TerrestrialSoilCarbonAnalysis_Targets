@@ -30,12 +30,9 @@ harmonize_depths <- function(cores_raw, cfg) {
   suppressPackageStartupMessages({ library(dplyr) })
 
   # ── Configuration ─────────────────────────────────────────────────────────
-  # Support both new (DEPTH_*) and legacy (VM0033_*) config key names.
-  standard_depths <- cfg$DEPTH_MIDPOINTS %||%
-                     cfg$VM0033_DEPTH_MIDPOINTS %||%
-                     c(7.5, 22.5, 45, 80)
+  standard_depths <- cfg$DEPTH_MIDPOINTS %||% c(7.5, 22.5, 45, 80)
 
-  depth_intervals <- cfg$DEPTH_INTERVALS %||% cfg$VM0033_DEPTH_INTERVALS
+  depth_intervals <- cfg$DEPTH_INTERVALS
   thickness <- if (!is.null(depth_intervals)) {
     depth_intervals$thickness_cm
   } else {

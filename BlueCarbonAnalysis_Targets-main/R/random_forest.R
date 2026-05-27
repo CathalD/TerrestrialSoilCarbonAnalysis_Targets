@@ -192,7 +192,7 @@ plot_rf_importance <- function(rf_models, cfg, top_n = 20) {
     coord_flip() +
     theme_bw(base_size = 10) +
     labs(title = "Random Forest — variable importance (total stock model)",
-         subtitle = "★ = strong theoretical link to coastal carbon stocks",
+         subtitle = "★ = strong theoretical link to terrestrial SOC in the literature",
          x = NULL, y = "% increase in MSE when variable permuted")
 }
 
@@ -219,7 +219,7 @@ plot_rf_maps <- function(rf_rasters, cfg) {
     theme_bw(base_size = 11) +
     theme(axis.title = element_blank(), axis.text = element_blank(),
           axis.ticks = element_blank()) +
-    labs(title = "Predicted carbon stock by VM0033 depth interval")
+    labs(title = "Predicted soil carbon stock by depth interval")
 
   total_df <- rast_df(rf_rasters, "total_stock")
 
