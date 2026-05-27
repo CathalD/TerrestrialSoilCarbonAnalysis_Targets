@@ -37,10 +37,10 @@ ui <- page_navbar(
       tags$circle(cx = "16", cy = "16", r = "16", fill = "white"),
       tags$text(
         x = "16", y = "22", `text-anchor` = "middle",
-        fill = "#2c7a4b", `font-size` = "14", `font-weight` = "bold", "BC"
+        fill = "#2c7a4b", `font-size` = "11", `font-weight` = "bold", "SOC"
       )
     ),
-    span("Blue Carbon Analysis", style = "color: white; font-weight: 600;")
+    span("Terrestrial Soil Carbon", style = "color: white; font-weight: 600;")
   ),
   theme    = bs_theme(bootswatch = "flatly", version = 5),
   bg       = "#2c7a4b",

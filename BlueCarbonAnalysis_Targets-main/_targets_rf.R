@@ -15,7 +15,7 @@ tar_source("R/")
 
 list(
   # ── CONFIGURATION ─────────────────────────────────────────────────────────
-  tar_target(config_file_rf, "blue_carbon_config.R", format = "file"),
+  tar_target(config_file_rf, "soil_carbon_config.R", format = "file"),
   tar_target(cfg_rf, load_config(config_file_rf)),
 
   # covar_file_rf path comes from config, so it depends on cfg_rf

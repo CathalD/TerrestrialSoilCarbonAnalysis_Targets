@@ -26,7 +26,7 @@ mod_guide_server <- function(id, project_root) {
 
       cfg <- read_project_config(project_root)
 
-      config_ok <- file.exists(file.path(project_root, "blue_carbon_config.R"))
+      config_ok <- file.exists(file.path(project_root, "soil_carbon_config.R"))
       locs_ok   <- file.exists(file.path(project_root,
         "Pre-Analysis Data Preparation", "data_raw", "core_locations.csv"))
       samp_ok   <- file.exists(file.path(project_root,
@@ -68,7 +68,7 @@ mod_guide_server <- function(id, project_root) {
           enabled     = s$setup_done,
           prereq_text = if (!s$setup_done) "Complete the Setup tab first.",
           description = paste0(
-            "Harmonizes field cores to VM0033 standard depths, computes ",
+            "Harmonizes field cores to IPCC Tier 2 standard depths, computes ",
             "per-stratum carbon stocks, generates exploratory plots. ",
             "Produces: ", code_span("reports/step1_nonspatial.html")),
           code = "targets::tar_make()"
@@ -100,7 +100,7 @@ mod_guide_server <- function(id, project_root) {
           prereq_text = if (!s$has_gee)
             "Enter a GEE project ID in the Setup tab (Step 1) to enable this pipeline.",
           description = paste0(
-            "Extracts 26 satellite covariates at ~952 global wetland cores via ",
+            "Extracts 28 satellite covariates at global soil profile locations via ",
             "Google Earth Engine. Run once — required before Pipelines 4 and 5."),
           extra = if (s$setup_done && s$has_gee) {
             div(class = "alert alert-info py-2 px-3 mb-2",
@@ -123,7 +123,7 @@ mod_guide_server <- function(id, project_root) {
           prereq_text = if (s$pre != "complete")
             "Run Pipeline 3 (GEE pre-analysis) first.",
           description = paste0(
-            "Weights ~952 global wetland cores by similarity to your site ",
+            "Weights global soil profiles by similarity to your site ",
             "and trains a bias-corrected RF with bootstrap uncertainty. ",
             "Produces: ", code_span("reports/step4_transfer_learning.html")),
           code = 'targets::tar_make(\n  script = "_targets_transfer.R",\n  store  = "_targets_transfer"\n)'
@@ -176,7 +176,7 @@ check_store_status <- function(project_root, store_name) {
 }
 
 read_project_config <- function(project_root) {
-  config_path <- file.path(project_root, "blue_carbon_config.R")
+  config_path <- file.path(project_root, "soil_carbon_config.R")
   if (!file.exists(config_path)) return(list())
   e <- new.env(parent = emptyenv())
   tryCatch(
@@ -190,11 +190,11 @@ code_span <- function(text) tags$code(text)
 guide_setup_card <- function(s) {
   items <- list(
     list(
-      label = "Configuration file (blue_carbon_config.R)",
+      label = "Configuration file (soil_carbon_config.R)",
       ok    = file.exists(
         file.path(
           tryCatch(normalizePath(file.path(getwd(), "..")), error = function(e) "."),
-          "blue_carbon_config.R"
+          "soil_carbon_config.R"
         )
       )
     )

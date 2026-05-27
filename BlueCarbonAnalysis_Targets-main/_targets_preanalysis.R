@@ -146,7 +146,21 @@ list(
     )
   ),
 
-  # ── Phase 3: Write output CSV ───────────────────────────────────────────────
+  # ── Phase 3: Write global layers CSV (read by _targets_transfer.R) ─────────
+  # combined_layers_filtered.csv = harmonized profile data (SOC, BD, depth)
+  # for all global soil cores with valid coordinates.
+  tar_target(
+    global_layers_file,
+    {
+      path <- file.path("Pre-Analysis Data Preparation", "data_global",
+                        "combined_layers_filtered.csv")
+      readr::write_csv(profiles_for_gee, path)
+      path
+    },
+    format = "file"
+  ),
+
+  # ── Phase 3: Write covariate CSV (read by _targets_transfer.R + embedding) ──
   tar_target(
     covariates_file,
     write_covariates_csv(

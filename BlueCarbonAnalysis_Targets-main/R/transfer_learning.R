@@ -194,7 +194,7 @@ train_tl <- function(tl_data, cfg) {
   suppressPackageStartupMessages({ library(dplyr); library(ranger) })
   set.seed(.TL_SEED)
 
-  depths    <- cfg$DEPTH_MIDPOINTS %||% cfg$VM0033_DEPTH_MIDPOINTS %||% c(7.5, 22.5, 45, 80)
+  depths    <- cfg$DEPTH_MIDPOINTS %||% c(7.5, 22.5, 45, 80)
   bv_full   <- tl_data$bridge_full
   bv_red    <- tl_data$bridge_reduced
   g_medians <- tl_data$global_medians
@@ -500,7 +500,7 @@ plot_tl_maps <- function(tl_rasters, tl_models, cfg) {
   })
 
   # Build depth labels dynamically from config
-  depth_intervals <- cfg$DEPTH_INTERVALS %||% cfg$VM0033_DEPTH_INTERVALS
+  depth_intervals <- cfg$DEPTH_INTERVALS
   if (!is.null(depth_intervals)) {
     depth_labels <- setNames(
       paste0(depth_intervals$depth_top, "–", depth_intervals$depth_bottom, " cm"),

@@ -68,20 +68,19 @@ BlueCarbonAnalysis_Targets-main/
 │   ├── data_raw/                 # Local field data + GEE exports
 │   │   ├── core_locations.csv    # core_id, latitude, longitude, stratum
 │   │   ├── core_samples.csv      # core_id, depth_cm, soc_g_kg, bulk_density_g_cm3
-│   │   └── TerrestrialSOC_GlobalCorePoints_Covariates.csv  # GEE covariates output
+│   │   └── TerrestrialSOC_GlobalCorePoints_Covariates.csv  # written by preanalysis pipeline
 │   ├── data_global/              # Global soil profile databases
 │   │   ├── wosis_layers.csv      # WoSIS 2023 (output of 01_WOSIS_harmonize.R)
 │   │   ├── canpeat_layers.csv    # CanPeat Canadian peatland data
-│   │   └── agricanada_nsdb_layers.csv  # Agriculture Canada NSDB
+│   │   ├── agricanada_nsdb_layers.csv  # Agriculture Canada NSDB
+│   │   └── combined_layers_filtered.csv  # written by preanalysis pipeline
 │   ├── covariates/
 │   │   └── TerrestrialSOC_Covariate_Snapshot_25m_2020_2023.tif  # 28-band GEE export
-│   ├── R_Scripts/                # Pre-analysis harmonization scripts
+│   ├── R_Scripts/                # Pre-analysis data harmonization (run once)
 │   │   ├── 01_WOSIS_harmonize.R  # WoSIS 2023 → wosis_layers.csv
-│   │   ├── 02_Peat_harmonize.R   # Peat data harmonization
-│   │   └── 03_combine_all.R      # Legacy combine script
+│   │   └── 02_Peat_harmonize.R   # CanPeat → canpeat_layers.csv
 │   └── GEE_Python/
-│       ├── GoogleEarthEngineAOICovariateAnalysis.js   # AOI covariate extraction
-│       └── *.ipynb                                    # Global point extraction
+│       └── GoogleEarthEngineAOICovariateAnalysis.js   # AOI covariate extraction (JS)
 └── outputs/
     ├── rf/
     ├── transfer/
@@ -95,17 +94,19 @@ BlueCarbonAnalysis_Targets-main/
 ### Run order
 
 ```r
-1. tar_make()                                          # main pipeline (Steps 1–2)
-2. tar_make(script="_targets_preanalysis.R",
-            store="_targets_preanalysis")              # global GEE extraction
-3. tar_make(script="_targets_transfer.R",
-            store="_targets_transfer")                 # Wadoux TL (Model 1)
-4. tar_make(script="_targets_embedding.R",
-            store="_targets_embedding")                # Embedding TL (Model 2)
+1. tar_make()                                          # Steps 1–2: data prep + simple extrapolation
+2. tar_make(script="_targets_rf.R",                    # Step 3: RF spatial maps (needs covariate raster)
+            store="_targets_rf")
+3. tar_make(script="_targets_preanalysis.R",           # Pre-analysis: global GEE extraction
+            store="_targets_preanalysis")
+4. tar_make(script="_targets_transfer.R",              # Step 4: Wadoux transfer learning
+            store="_targets_transfer")
+5. tar_make(script="_targets_embedding.R",             # Step 5: Embedding transfer learning
+            store="_targets_embedding")
 ```
 
-Steps 3 and 4 read `cores_harmonized` from the main store and
-`TerrestrialSOC_GlobalCorePoints_Covariates.csv` from the preanalysis output.
+Steps 4 and 5 require Step 3 to have run first — they read `combined_layers_filtered.csv`
+and `TerrestrialSOC_GlobalCorePoints_Covariates.csv` written by the preanalysis pipeline.
 
 ---
 
@@ -115,8 +116,14 @@ Steps 3 and 4 read `cores_harmonized` from the main store and
 |------|-------------|------------------|
 | 1 — Data prep | `cores_raw`, `eda_plots`, `cores_harmonized` | Depth-harmonized field cores |
 | 2 — Simple extrapolation | `step2_extrapolation` | Per-stratum carbon densities (no raster) |
+| Reports | `report_nonspatial` | `reports/step1_nonspatial.html` |
+
+### RF pipeline (`_targets_rf.R`)
+
+| Step | Key targets | What it produces |
+|------|-------------|------------------|
 | 3 — Random forest | `rf_data`, `rf_models`, `rf_rasters`, `rf_maps` | Spatial carbon stock maps |
-| Reports | `report_nonspatial`, `report_rf` | HTML reports in `reports/` |
+| Reports | `report_rf` | `reports/step3_random_forest.html` |
 
 ---
 
@@ -186,7 +193,6 @@ CV strategy: leave-one-CORE-out (not leave-one-observation-out)
 ```
 
 Always read from `cfg$DEPTH_MIDPOINTS` — never hardcode.
-The fallback `cfg$VM0033_DEPTH_MIDPOINTS` is supported for legacy configs.
 
 ---
 
