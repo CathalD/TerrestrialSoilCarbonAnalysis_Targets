@@ -4,10 +4,10 @@
 # ============================================================================
 
 # ── Project metadata ──────────────────────────────────────────────────────────
-PROJECT_NAME     <- "TerrestrialSOC_2026_Example"
+PROJECT_NAME     <- "OntarioRestoration_Chronosequence_2026"
 PROJECT_SCENARIO <- "PROJECT"   # BASELINE | PROJECT | CONTROL | DEGRADED
 MONITORING_YEAR  <- 2026
-PROJECT_LOCATION <- "Example Upland Site"
+PROJECT_LOCATION <- "Southern Ontario, Canada (PEM / BOS sites)"
 
 # ── Google Earth Engine ───────────────────────────────────────────────────────
 GEE_PROJECT <- "north-star-project-470316"
@@ -29,15 +29,15 @@ AOI_FILE <- file.path(DATA_RAW_DIR, "aoi_boundary.geojson")
 AOI_STRATUM_FIELD <- NULL  # e.g. "landuse_class"
 
 # ── Land-use strata ───────────────────────────────────────────────────────────
-# Codes must match the `stratum` column in core_locations.csv.
-# Common terrestrial classes: Forest (F), Grassland (GL), Cropland (CL),
-# Peatland (PL), Shrubland (SL), Wetland (WL).
-VALID_STRATA <- c("F", "GL", "CL")
+# Restoration chronosequence: strata = years since restoration began.
+# Codes must match the `stratum` column in core_locations.csv exactly.
+VALID_STRATA <- c("yr00_05", "yr05_10", "yr10_15", "yr15_20")
 
 STRATUM_COLORS <- c(
-  "F"  = "#2d6a4f",   # Forest — dark green
-  "GL" = "#95d5b2",   # Grassland — light green
-  "CL" = "#f4a261"    # Cropland — orange
+  "yr00_05" = "#d4edda",   # 0–5 yrs — very light green (young)
+  "yr05_10" = "#74c493",   # 5–10 yrs
+  "yr10_15" = "#2d9e6b",   # 10–15 yrs
+  "yr15_20" = "#1a5e3a"    # 15–20 yrs — dark green (established)
 )
 
 # ── Standard depth intervals ──────────────────────────────────────────────────
@@ -59,9 +59,10 @@ DEPTH_INTERVALS <- data.frame(
 # Literature values for Canadian terrestrial ecosystems (Gregorich et al. 1994;
 # Jandl et al. 2014). Update for your specific ecosystem type.
 BD_DEFAULTS <- list(
-  "F"  = 0.90,   # Forest mineral soil — moderate OM, variable texture
-  "GL" = 1.20,   # Grassland — denser, lower OM mineral soil
-  "CL" = 1.30    # Cropland — compacted tilled mineral soil
+  "yr00_05" = 1.20,   # Recently restored ex-cropland — still compacted
+  "yr05_10" = 1.10,   # Early recovery — some aggregate formation
+  "yr10_15" = 1.00,   # Mid-recovery — improving structure and OM
+  "yr15_20" = 0.90    # Well-established — lower BD from root inputs
 )
 
 # ── QC thresholds ─────────────────────────────────────────────────────────────
