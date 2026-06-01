@@ -1,0 +1,19 @@
+main:
+  script: _targets.R
+  store: _targets
+
+rf:
+  script: _targets_rf.R
+  store: _targets_rf
+
+transfer:
+  script: _targets_transfer.R
+  store: _targets_transfer
+
+preanalysis:
+  script: _targets_preanalysis.R
+  store: _targets_preanalysis
+
+embedding:
+  script: _targets_embedding.R
+  store: _targets_embedding

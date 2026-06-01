@@ -18,7 +18,7 @@ Depth intervals follow IPCC Tier 2 standards:
 
 ## Step 1 — Configure the project
 
-Edit `BlueCarbonAnalysis_Targets-main/soil_carbon_config.R`:
+Edit `pipeline/soil_carbon_config.R`:
 
 ```r
 PROJECT_NAME    <- "MySite_2025"
@@ -50,7 +50,7 @@ Add or adjust these in the `BD_DEFAULTS` list in `soil_carbon_config.R`.
 
 Place two CSV files in:
 ```
-BlueCarbonAnalysis_Targets-main/Pre-Analysis Data Preparation/data_raw/
+pipeline/Pre-Analysis Data Preparation/data_raw/
 ```
 
 ### core_locations.csv
@@ -104,7 +104,7 @@ TSOF1,60,100,5.2,1.25
 
 ## Step 3 — Run the basic analysis (no GEE needed)
 
-Open RStudio in the project root (`BlueCarbonAnalysis_Targets-main/`) and run:
+Open RStudio in the project root (`pipeline/`) and run:
 
 ```r
 targets::tar_make()
