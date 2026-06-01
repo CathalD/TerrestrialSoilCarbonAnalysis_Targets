@@ -38,7 +38,7 @@ install.packages(c(
 
 ### 3. Launch the setup app
 
-Open the project in RStudio, then run from inside `BlueCarbonAnalysis_Targets-main/`:
+Open the project in RStudio (the `.Rprofile` loads automatically), then run:
 
 ```r
 shiny::runApp("shiny")
@@ -134,4 +134,4 @@ once a covariate raster and Google Earth Engine project are configured:
 | Wadoux transfer learning | Borrows signal from global terrestrial soil profiles weighted by site similarity |
 | Embedding transfer learning | Same as Wadoux but uses Google's 64-d satellite foundation model for similarity |
 
-See `BlueCarbonAnalysis_Targets-main/CLAUDE.md` for full technical documentation.
+See `CLAUDE.md` and `PIPELINE.md` for full technical documentation.
