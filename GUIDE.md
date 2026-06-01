@@ -3,7 +3,8 @@
 ## What this pipeline does
 
 Takes field soil core data → harmonizes depths → extracts remote sensing covariates
-→ predicts soil organic carbon (SOC) stocks spatially → estimates 90% uncertainty.
+→ predicts soil organic carbon (SOC) stocks spatially → estimates 90% uncertainty
+(transfer-learning tiers; the non-spatial and RF tiers currently report point estimates).
 
 Depth intervals follow IPCC Tier 2 standards:
 
@@ -25,9 +26,11 @@ PROJECT_NAME    <- "MySite_2025"
 PROJECT_LOCATION <- "Central Alberta, Canada"
 MONITORING_YEAR  <- 2025
 
-# Stratum codes — must match your core_locations.csv
+# Stratum codes are user-defined — they must match your core_locations.csv.
+# Example (land use): F = Forest, GL = Grassland, CL = Cropland, PL = Peatland.
+# The bundled example project instead uses restoration age classes
+# (yr00_05, yr05_10, yr10_15, yr15_20).
 VALID_STRATA <- c("F", "GL", "CL")
-# Common codes: F = Forest, GL = Grassland, CL = Cropland, PL = Peatland
 
 # Path to your 28-band GEE covariate raster (required for RF maps)
 COVARIATE_RASTER <- "Pre-Analysis Data Preparation/covariates/your_raster.tif"
@@ -98,7 +101,7 @@ TSOF1,60,100,5.2,1.25
 **Minimum data requirements:**
 - At least 3 complete cores per stratum for the RF model to train.
 - Aim for 15–30 cores per stratum for reliable spatial prediction.
-- Cores should span the depth range 0–100 cm where possible (not mandatory — the equal-area spline will extrapolate).
+- Cores should span the depth range 0–100 cm where possible (not mandatory — the spline will extrapolate, but extrapolated depths are flagged).
 
 ---
 
