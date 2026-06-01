@@ -1,0 +1,5528 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document id="1JaSY7wO9Wxizj7uPu0JnPRD4x7k_xiao">
+	<name>Alderville_CarbonProject_SamplingSites</name>
+	<gx:CascadingStyle kml:id="__managed_style_07E44672503FBAC25C93_highlight">
+		<Style>
+			<IconStyle>
+				<scale>1.2</scale>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+				<color>00000000</color>
+				<scale>0</scale>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff6e6e6e</color>
+				<width>0.525</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>fffcb8fc</color>
+			</PolyStyle>
+			<BalloonStyle>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_07E44672503FBAC25C93_normal">
+		<Style>
+			<IconStyle>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+				<color>00000000</color>
+				<scale>0</scale>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff6e6e6e</color>
+				<width>0.35</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>fffcb8fc</color>
+			</PolyStyle>
+			<BalloonStyle>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<StyleMap id="__managed_style_07E44672503FBAC25C93">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#__managed_style_07E44672503FBAC25C93_normal</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#__managed_style_07E44672503FBAC25C93_highlight</styleUrl>
+		</Pair>
+	</StyleMap>
+	<gx:CascadingStyle kml:id="__managed_style_0632E6C6953FBAC25C94_highlight">
+		<Style>
+			<IconStyle>
+				<scale>1.2</scale>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+				<color>00000000</color>
+				<scale>0</scale>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff6e6e6e</color>
+				<width>0.525</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>fffccfeb</color>
+			</PolyStyle>
+			<BalloonStyle>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_0632E6C6953FBAC25C94_normal">
+		<Style>
+			<IconStyle>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+				<color>00000000</color>
+				<scale>0</scale>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff6e6e6e</color>
+				<width>0.35</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>fffccfeb</color>
+			</PolyStyle>
+			<BalloonStyle>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<StyleMap id="__managed_style_0632E6C6953FBAC25C94">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#__managed_style_0632E6C6953FBAC25C94_normal</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#__managed_style_0632E6C6953FBAC25C94_highlight</styleUrl>
+		</Pair>
+	</StyleMap>
+	<gx:CascadingStyle kml:id="__managed_style_006094B0A93FBAC25C8E_highlight">
+		<Style>
+			<IconStyle>
+				<scale>1.2</scale>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>3</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_006094B0A93FBAC25C8E_normal">
+		<Style>
+			<IconStyle>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>2</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<StyleMap id="__managed_style_006094B0A93FBAC25C8E">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#__managed_style_006094B0A93FBAC25C8E_normal</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#__managed_style_006094B0A93FBAC25C8E_highlight</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Folder id="5C98572CCF000001">
+		<name>BOS_Recomendation_CompositeSites</name>
+		<styleUrl>#__managed_style_006094B0A93FBAC25C8E</styleUrl>
+		<Folder id="5C98572CCF000002">
+			<name>BOS_Recomendation_CompositeSites</name>
+			<styleUrl>#__managed_style_006094B0A93FBAC25C8E</styleUrl>
+			<Placemark id="5C98572CCF000004">
+				<name>COMP_P_001</name>
+				<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>COMP_P_001</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>area_m2</td>
+
+<td>400</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>centroid_lat</td>
+
+<td>44.173184</td>
+
+</tr>
+
+<tr>
+
+<td>centroid_lon</td>
+
+<td>-78.08918</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>composite_id</td>
+
+<td>COMP_P_001</td>
+
+</tr>
+
+<tr>
+
+<td>export_date</td>
+
+<td>2026-02-12</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>export_format</td>
+
+<td>GeoJSON</td>
+
+</tr>
+
+<tr>
+
+<td>method</td>
+
+<td>rectangle</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>paired</td>
+
+<td>1</td>
+
+</tr>
+
+<tr>
+
+<td>paired_core_id</td>
+
+<td>HR_001</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>paired_dist_m</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>shape_1</td>
+
+<td>square</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>type</td>
+
+<td>composite</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body><script type="text/javascript">
+
+				function changeImage(attElement, nameElement) {
+
+				document.getElementById('imageAttachment').src = attElement;
+
+				document.getElementById('imageName').innerHTML = nameElement;}
+
+			</script></html>
+
+]]></description>
+				<styleUrl>#__managed_style_0632E6C6953FBAC25C94</styleUrl>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-78.08930487599997,44.17309419700007,0 -78.08905438399995,44.17309419700007,0 -78.08905438399995,44.17327386000005,0 -78.08930487599997,44.17327386000005,0 -78.08930487599997,44.17309419700007,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+			<Placemark id="5C98572CCF000005">
+				<name>COMP_P_002</name>
+				<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>COMP_P_002</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>area_m2</td>
+
+<td>400</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>centroid_lat</td>
+
+<td>44.170509</td>
+
+</tr>
+
+<tr>
+
+<td>centroid_lon</td>
+
+<td>-78.091799</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>composite_id</td>
+
+<td>COMP_P_002</td>
+
+</tr>
+
+<tr>
+
+<td>export_date</td>
+
+<td>2026-02-12</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>export_format</td>
+
+<td>GeoJSON</td>
+
+</tr>
+
+<tr>
+
+<td>method</td>
+
+<td>rectangle</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>paired</td>
+
+<td>1</td>
+
+</tr>
+
+<tr>
+
+<td>paired_core_id</td>
+
+<td>HR_002</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>paired_dist_m</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>shape_1</td>
+
+<td>square</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>type</td>
+
+<td>composite</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body><script type="text/javascript">
+
+				function changeImage(attElement, nameElement) {
+
+				document.getElementById('imageAttachment').src = attElement;
+
+				document.getElementById('imageName').innerHTML = nameElement;}
+
+			</script></html>
+
+]]></description>
+				<styleUrl>#__managed_style_0632E6C6953FBAC25C94</styleUrl>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-78.09192467199995,44.17041927400004,0 -78.09167419099998,44.17041927400004,0 -78.09167419099998,44.17059893600003,0 -78.09192467199995,44.17059893600003,0 -78.09192467199995,44.17041927400004,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+			<Placemark id="5C98572CCF000006">
+				<name>COMP_P_003</name>
+				<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>COMP_P_003</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>area_m2</td>
+
+<td>400</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>centroid_lat</td>
+
+<td>44.173613</td>
+
+</tr>
+
+<tr>
+
+<td>centroid_lon</td>
+
+<td>-78.091433</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>composite_id</td>
+
+<td>COMP_P_003</td>
+
+</tr>
+
+<tr>
+
+<td>export_date</td>
+
+<td>2026-02-12</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>export_format</td>
+
+<td>GeoJSON</td>
+
+</tr>
+
+<tr>
+
+<td>method</td>
+
+<td>rectangle</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>paired</td>
+
+<td>1</td>
+
+</tr>
+
+<tr>
+
+<td>paired_core_id</td>
+
+<td>HR_003</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>paired_dist_m</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>shape_1</td>
+
+<td>square</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>type</td>
+
+<td>composite</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body><script type="text/javascript">
+
+				function changeImage(attElement, nameElement) {
+
+				document.getElementById('imageAttachment').src = attElement;
+
+				document.getElementById('imageName').innerHTML = nameElement;}
+
+			</script></html>
+
+]]></description>
+				<styleUrl>#__managed_style_0632E6C6953FBAC25C94</styleUrl>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-78.09155873999998,44.17352335400005,0 -78.09130824599998,44.17352335400005,0 -78.09130824599998,44.17370301700004,0 -78.09155873999998,44.17370301700004,0 -78.09155873999998,44.17352335400005,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+			<Placemark id="5C98572CCF000007">
+				<name>COMP_P_004</name>
+				<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>COMP_P_004</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>area_m2</td>
+
+<td>400</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>centroid_lat</td>
+
+<td>44.171576</td>
+
+</tr>
+
+<tr>
+
+<td>centroid_lon</td>
+
+<td>-78.084486</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>composite_id</td>
+
+<td>COMP_P_004</td>
+
+</tr>
+
+<tr>
+
+<td>export_date</td>
+
+<td>2026-02-12</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>export_format</td>
+
+<td>GeoJSON</td>
+
+</tr>
+
+<tr>
+
+<td>method</td>
+
+<td>rectangle</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>paired</td>
+
+<td>1</td>
+
+</tr>
+
+<tr>
+
+<td>paired_core_id</td>
+
+<td>HR_004</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>paired_dist_m</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>shape_1</td>
+
+<td>square</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>type</td>
+
+<td>composite</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body><script type="text/javascript">
+
+				function changeImage(attElement, nameElement) {
+
+				document.getElementById('imageAttachment').src = attElement;
+
+				document.getElementById('imageName').innerHTML = nameElement;}
+
+			</script></html>
+
+]]></description>
+				<styleUrl>#__managed_style_0632E6C6953FBAC25C94</styleUrl>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-78.08461150899996,44.17148580200006,0 -78.08436102399997,44.17148580200006,0 -78.08436102399997,44.17166546400006,0 -78.08461150899996,44.17166546400006,0 -78.08461150899996,44.17148580200006,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+			<Placemark id="5C98572CCF000008">
+				<name>COMP_P_005</name>
+				<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>COMP_P_005</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>area_m2</td>
+
+<td>400</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>centroid_lat</td>
+
+<td>44.174896</td>
+
+</tr>
+
+<tr>
+
+<td>centroid_lon</td>
+
+<td>-78.089207</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>composite_id</td>
+
+<td>COMP_P_005</td>
+
+</tr>
+
+<tr>
+
+<td>export_date</td>
+
+<td>2026-02-12</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>export_format</td>
+
+<td>GeoJSON</td>
+
+</tr>
+
+<tr>
+
+<td>method</td>
+
+<td>rectangle</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>paired</td>
+
+<td>1</td>
+
+</tr>
+
+<tr>
+
+<td>paired_core_id</td>
+
+<td>HR_005</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>paired_dist_m</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>shape_1</td>
+
+<td>square</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>type</td>
+
+<td>composite</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body><script type="text/javascript">
+
+				function changeImage(attElement, nameElement) {
+
+				document.getElementById('imageAttachment').src = attElement;
+
+				document.getElementById('imageName').innerHTML = nameElement;}
+
+			</script></html>
+
+]]></description>
+				<styleUrl>#__managed_style_0632E6C6953FBAC25C94</styleUrl>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-78.08933217599997,44.17480665200003,0 -78.08908167599998,44.17480665200003,0 -78.08908167599998,44.17498631400008,0 -78.08933217599997,44.17498631400008,0 -78.08933217599997,44.17480665200003,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+			<Placemark id="5C98572CCF000009">
+				<name>COMP_U_000</name>
+				<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>COMP_U_000</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>area_m2</td>
+
+<td>400</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>centroid_lat</td>
+
+<td>44.169661</td>
+
+</tr>
+
+<tr>
+
+<td>centroid_lon</td>
+
+<td>-78.084587</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>composite_id</td>
+
+<td>COMP_U_000</td>
+
+</tr>
+
+<tr>
+
+<td>export_date</td>
+
+<td>2026-02-12</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>export_format</td>
+
+<td>GeoJSON</td>
+
+</tr>
+
+<tr>
+
+<td>method</td>
+
+<td>rectangle</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>paired</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>paired_core_id</td>
+
+<td>&lt;Null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>paired_dist_m</td>
+
+<td>&lt;Null&gt;</td>
+
+</tr>
+
+<tr>
+
+<td>shape_1</td>
+
+<td>square</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>type</td>
+
+<td>composite</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body><script type="text/javascript">
+
+				function changeImage(attElement, nameElement) {
+
+				document.getElementById('imageAttachment').src = attElement;
+
+				document.getElementById('imageName').innerHTML = nameElement;}
+
+			</script></html>
+
+]]></description>
+				<styleUrl>#__managed_style_0632E6C6953FBAC25C94</styleUrl>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-78.08471199799999,44.16957088400005,0 -78.08446152099998,44.16957088400005,0 -78.08446152099998,44.16975054600005,0 -78.08471199799999,44.16975054600005,0 -78.08471199799999,44.16957088400005,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+			<Placemark id="5C98572CCF00000A">
+				<name>COMP_U_001</name>
+				<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>COMP_U_001</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>area_m2</td>
+
+<td>400</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>centroid_lat</td>
+
+<td>44.172258</td>
+
+</tr>
+
+<tr>
+
+<td>centroid_lon</td>
+
+<td>-78.092436</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>composite_id</td>
+
+<td>COMP_U_001</td>
+
+</tr>
+
+<tr>
+
+<td>export_date</td>
+
+<td>2026-02-12</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>export_format</td>
+
+<td>GeoJSON</td>
+
+</tr>
+
+<tr>
+
+<td>method</td>
+
+<td>rectangle</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>paired</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>paired_core_id</td>
+
+<td>&lt;Null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>paired_dist_m</td>
+
+<td>&lt;Null&gt;</td>
+
+</tr>
+
+<tr>
+
+<td>shape_1</td>
+
+<td>square</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>type</td>
+
+<td>composite</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body><script type="text/javascript">
+
+				function changeImage(attElement, nameElement) {
+
+				document.getElementById('imageAttachment').src = attElement;
+
+				document.getElementById('imageName').innerHTML = nameElement;}
+
+			</script></html>
+
+]]></description>
+				<styleUrl>#__managed_style_0632E6C6953FBAC25C94</styleUrl>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-78.09256145899997,44.17216857600005,0 -78.09231097099996,44.17216857600005,0 -78.09231097099996,44.17234823800004,0 -78.09256145899997,44.17234823800004,0 -78.09256145899997,44.17216857600005,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+			<Placemark id="5C98572CCF00000B">
+				<name>COMP_U_002</name>
+				<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>COMP_U_002</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>area_m2</td>
+
+<td>400</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>centroid_lat</td>
+
+<td>44.171415</td>
+
+</tr>
+
+<tr>
+
+<td>centroid_lon</td>
+
+<td>-78.086254</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>composite_id</td>
+
+<td>COMP_U_002</td>
+
+</tr>
+
+<tr>
+
+<td>export_date</td>
+
+<td>2026-02-12</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>export_format</td>
+
+<td>GeoJSON</td>
+
+</tr>
+
+<tr>
+
+<td>method</td>
+
+<td>rectangle</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>paired</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>paired_core_id</td>
+
+<td>&lt;Null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>paired_dist_m</td>
+
+<td>&lt;Null&gt;</td>
+
+</tr>
+
+<tr>
+
+<td>shape_1</td>
+
+<td>square</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>type</td>
+
+<td>composite</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body><script type="text/javascript">
+
+				function changeImage(attElement, nameElement) {
+
+				document.getElementById('imageAttachment').src = attElement;
+
+				document.getElementById('imageName').innerHTML = nameElement;}
+
+			</script></html>
+
+]]></description>
+				<styleUrl>#__managed_style_0632E6C6953FBAC25C94</styleUrl>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-78.08637949299998,44.17132545600003,0 -78.08612900799994,44.17132545600003,0 -78.08612900799994,44.17150511900007,0 -78.08637949299998,44.17150511900007,0 -78.08637949299998,44.17132545600003,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+			<Placemark id="5C98572CCF00000C">
+				<name>COMP_U_003</name>
+				<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>COMP_U_003</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>area_m2</td>
+
+<td>400</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>centroid_lat</td>
+
+<td>44.171134</td>
+
+</tr>
+
+<tr>
+
+<td>centroid_lon</td>
+
+<td>-78.084194</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>composite_id</td>
+
+<td>COMP_U_003</td>
+
+</tr>
+
+<tr>
+
+<td>export_date</td>
+
+<td>2026-02-12</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>export_format</td>
+
+<td>GeoJSON</td>
+
+</tr>
+
+<tr>
+
+<td>method</td>
+
+<td>rectangle</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>paired</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>paired_core_id</td>
+
+<td>&lt;Null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>paired_dist_m</td>
+
+<td>&lt;Null&gt;</td>
+
+</tr>
+
+<tr>
+
+<td>shape_1</td>
+
+<td>square</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>type</td>
+
+<td>composite</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body><script type="text/javascript">
+
+				function changeImage(attElement, nameElement) {
+
+				document.getElementById('imageAttachment').src = attElement;
+
+				document.getElementById('imageName').innerHTML = nameElement;}
+
+			</script></html>
+
+]]></description>
+				<styleUrl>#__managed_style_0632E6C6953FBAC25C94</styleUrl>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-78.08431887099994,44.17104435300007,0 -78.08406838799993,44.17104435300007,0 -78.08406838799993,44.17122401500006,0 -78.08431887099994,44.17122401500006,0 -78.08431887099994,44.17104435300007,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+			<Placemark id="5C98572CCF00000D">
+				<name>COMP_U_004</name>
+				<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>COMP_U_004</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>area_m2</td>
+
+<td>400</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>centroid_lat</td>
+
+<td>44.173732</td>
+
+</tr>
+
+<tr>
+
+<td>centroid_lon</td>
+
+<td>-78.092043</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>composite_id</td>
+
+<td>COMP_U_004</td>
+
+</tr>
+
+<tr>
+
+<td>export_date</td>
+
+<td>2026-02-12</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>export_format</td>
+
+<td>GeoJSON</td>
+
+</tr>
+
+<tr>
+
+<td>method</td>
+
+<td>rectangle</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>paired</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>paired_core_id</td>
+
+<td>&lt;Null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>paired_dist_m</td>
+
+<td>&lt;Null&gt;</td>
+
+</tr>
+
+<tr>
+
+<td>shape_1</td>
+
+<td>square</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>type</td>
+
+<td>composite</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body><script type="text/javascript">
+
+				function changeImage(attElement, nameElement) {
+
+				document.getElementById('imageAttachment').src = attElement;
+
+				document.getElementById('imageName').innerHTML = nameElement;}
+
+			</script></html>
+
+]]></description>
+				<styleUrl>#__managed_style_0632E6C6953FBAC25C94</styleUrl>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-78.09216848699998,44.17364207600008,0 -78.09191799299998,44.17364207600008,0 -78.09191799299998,44.17382173800007,0 -78.09216848699998,44.17382173800007,0 -78.09216848699998,44.17364207600008,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+			<Placemark id="5C98572CCF00000E">
+				<name>COMP_U_005</name>
+				<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>COMP_U_005</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>area_m2</td>
+
+<td>400</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>centroid_lat</td>
+
+<td>44.173451</td>
+
+</tr>
+
+<tr>
+
+<td>centroid_lon</td>
+
+<td>-78.089983</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>composite_id</td>
+
+<td>COMP_U_005</td>
+
+</tr>
+
+<tr>
+
+<td>export_date</td>
+
+<td>2026-02-12</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>export_format</td>
+
+<td>GeoJSON</td>
+
+</tr>
+
+<tr>
+
+<td>method</td>
+
+<td>rectangle</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>paired</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>paired_core_id</td>
+
+<td>&lt;Null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>paired_dist_m</td>
+
+<td>&lt;Null&gt;</td>
+
+</tr>
+
+<tr>
+
+<td>shape_1</td>
+
+<td>square</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>type</td>
+
+<td>composite</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body><script type="text/javascript">
+
+				function changeImage(attElement, nameElement) {
+
+				document.getElementById('imageAttachment').src = attElement;
+
+				document.getElementById('imageName').innerHTML = nameElement;}
+
+			</script></html>
+
+]]></description>
+				<styleUrl>#__managed_style_0632E6C6953FBAC25C94</styleUrl>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-78.09010777199995,44.17336106100004,0 -78.08985727899994,44.17336106100004,0 -78.08985727899994,44.17354072300003,0 -78.09010777199995,44.17354072300003,0 -78.09010777199995,44.17336106100004,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+			<Placemark id="5C98572CCF00000F">
+				<name>COMP_U_006</name>
+				<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>COMP_U_006</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>area_m2</td>
+
+<td>400</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>centroid_lat</td>
+
+<td>44.17317</td>
+
+</tr>
+
+<tr>
+
+<td>centroid_lon</td>
+
+<td>-78.087922</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>composite_id</td>
+
+<td>COMP_U_006</td>
+
+</tr>
+
+<tr>
+
+<td>export_date</td>
+
+<td>2026-02-12</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>export_format</td>
+
+<td>GeoJSON</td>
+
+</tr>
+
+<tr>
+
+<td>method</td>
+
+<td>rectangle</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>paired</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>paired_core_id</td>
+
+<td>&lt;Null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>paired_dist_m</td>
+
+<td>&lt;Null&gt;</td>
+
+</tr>
+
+<tr>
+
+<td>shape_1</td>
+
+<td>square</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>type</td>
+
+<td>composite</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body><script type="text/javascript">
+
+				function changeImage(attElement, nameElement) {
+
+				document.getElementById('imageAttachment').src = attElement;
+
+				document.getElementById('imageName').innerHTML = nameElement;}
+
+			</script></html>
+
+]]></description>
+				<styleUrl>#__managed_style_0632E6C6953FBAC25C94</styleUrl>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-78.08804707299998,44.17308001400005,0 -78.08779658099996,44.17308001400005,0 -78.08779658099996,44.17325967600004,0 -78.08804707299998,44.17325967600004,0 -78.08804707299998,44.17308001400005,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+			<Placemark id="5C98572CCF000010">
+				<name>COMP_U_007</name>
+				<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>COMP_U_007</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>area_m2</td>
+
+<td>400</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>centroid_lat</td>
+
+<td>44.172889</td>
+
+</tr>
+
+<tr>
+
+<td>centroid_lon</td>
+
+<td>-78.085861</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>composite_id</td>
+
+<td>COMP_U_007</td>
+
+</tr>
+
+<tr>
+
+<td>export_date</td>
+
+<td>2026-02-12</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>export_format</td>
+
+<td>GeoJSON</td>
+
+</tr>
+
+<tr>
+
+<td>method</td>
+
+<td>rectangle</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>paired</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>paired_core_id</td>
+
+<td>&lt;Null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>paired_dist_m</td>
+
+<td>&lt;Null&gt;</td>
+
+</tr>
+
+<tr>
+
+<td>shape_1</td>
+
+<td>square</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>type</td>
+
+<td>composite</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body><script type="text/javascript">
+
+				function changeImage(attElement, nameElement) {
+
+				document.getElementById('imageAttachment').src = attElement;
+
+				document.getElementById('imageName').innerHTML = nameElement;}
+
+			</script></html>
+
+]]></description>
+				<styleUrl>#__managed_style_0632E6C6953FBAC25C94</styleUrl>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-78.08598639199994,44.17279893600005,0 -78.08573590099996,44.17279893600005,0 -78.08573590099996,44.17297859800004,0 -78.08598639199994,44.17297859800004,0 -78.08598639199994,44.17279893600005,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+		</Folder>
+	</Folder>
+	<Folder id="5C98577AE6000001">
+		<name>BOS_Regular_Site</name>
+		<styleUrl>#__managed_style_006094B0A93FBAC25C8E</styleUrl>
+		<Folder id="5C98577AE6000002">
+			<name>BOS_Regular_Sites</name>
+			<open>1</open>
+			<styleUrl>#__managed_style_006094B0A93FBAC25C8E</styleUrl>
+			<Placemark id="5C98577AE6000003">
+				<name>BOS-R1</name>
+				<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>2026-02-12</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>FID</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>export_dat</td>
+
+<td>2026-02-12</td>
+
+</tr>
+
+<tr>
+
+<td>export_for</td>
+
+<td>SHP</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>core_id</td>
+
+<td>HR_000</td>
+
+</tr>
+
+<tr>
+
+<td>lon</td>
+
+<td>-78.092021</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>type</td>
+
+<td>hr_core</td>
+
+</tr>
+
+<tr>
+
+<td>has_paired</td>
+
+<td>1</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>lat</td>
+
+<td>44.173574</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body><script type="text/javascript">
+
+				function changeImage(attElement, nameElement) {
+
+				document.getElementById('imageAttachment').src = attElement;
+
+				document.getElementById('imageName').innerHTML = nameElement;}
+
+			</script></html>
+
+]]></description>
+				<styleUrl>#__managed_style_006094B0A93FBAC25C8E</styleUrl>
+				<Point>
+					<coordinates>-78.0920205170932,44.1735739218531,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark id="5C98577AE6000004">
+				<name>BOS-R2</name>
+				<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>2026-02-12</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>FID</td>
+
+<td>1</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>export_dat</td>
+
+<td>2026-02-12</td>
+
+</tr>
+
+<tr>
+
+<td>export_for</td>
+
+<td>SHP</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>core_id</td>
+
+<td>HR_001</td>
+
+</tr>
+
+<tr>
+
+<td>lon</td>
+
+<td>-78.08918</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>type</td>
+
+<td>hr_core</td>
+
+</tr>
+
+<tr>
+
+<td>has_paired</td>
+
+<td>1</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>lat</td>
+
+<td>44.173184</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body><script type="text/javascript">
+
+				function changeImage(attElement, nameElement) {
+
+				document.getElementById('imageAttachment').src = attElement;
+
+				document.getElementById('imageName').innerHTML = nameElement;}
+
+			</script></html>
+
+]]></description>
+				<styleUrl>#__managed_style_006094B0A93FBAC25C8E</styleUrl>
+				<Point>
+					<coordinates>-78.08917963003707,44.17318402851399,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark id="5C98577AE6000005">
+				<name>BOS-R3</name>
+				<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>2026-02-12</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>FID</td>
+
+<td>2</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>export_dat</td>
+
+<td>2026-02-12</td>
+
+</tr>
+
+<tr>
+
+<td>export_for</td>
+
+<td>SHP</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>core_id</td>
+
+<td>HR_002</td>
+
+</tr>
+
+<tr>
+
+<td>lon</td>
+
+<td>-78.091799</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>type</td>
+
+<td>hr_core</td>
+
+</tr>
+
+<tr>
+
+<td>has_paired</td>
+
+<td>1</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>lat</td>
+
+<td>44.170509</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body><script type="text/javascript">
+
+				function changeImage(attElement, nameElement) {
+
+				document.getElementById('imageAttachment').src = attElement;
+
+				document.getElementById('imageName').innerHTML = nameElement;}
+
+			</script></html>
+
+]]></description>
+				<styleUrl>#__managed_style_006094B0A93FBAC25C8E</styleUrl>
+				<Point>
+					<coordinates>-78.09179943134278,44.17050910484149,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark id="5C98577AE6000006">
+				<name>BOS-R4</name>
+				<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>2026-02-12</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>FID</td>
+
+<td>3</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>export_dat</td>
+
+<td>2026-02-12</td>
+
+</tr>
+
+<tr>
+
+<td>export_for</td>
+
+<td>SHP</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>core_id</td>
+
+<td>HR_003</td>
+
+</tr>
+
+<tr>
+
+<td>lon</td>
+
+<td>-78.091433</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>type</td>
+
+<td>hr_core</td>
+
+</tr>
+
+<tr>
+
+<td>has_paired</td>
+
+<td>1</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>lat</td>
+
+<td>44.173613</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body><script type="text/javascript">
+
+				function changeImage(attElement, nameElement) {
+
+				document.getElementById('imageAttachment').src = attElement;
+
+				document.getElementById('imageName').innerHTML = nameElement;}
+
+			</script></html>
+
+]]></description>
+				<styleUrl>#__managed_style_006094B0A93FBAC25C8E</styleUrl>
+				<Point>
+					<coordinates>-78.09143349267423,44.17361318561615,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark id="5C98577AE6000007">
+				<name>BOS-R5</name>
+				<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>2026-02-12</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>FID</td>
+
+<td>4</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>export_dat</td>
+
+<td>2026-02-12</td>
+
+</tr>
+
+<tr>
+
+<td>export_for</td>
+
+<td>SHP</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>core_id</td>
+
+<td>HR_004</td>
+
+</tr>
+
+<tr>
+
+<td>lon</td>
+
+<td>-78.084486</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>type</td>
+
+<td>hr_core</td>
+
+</tr>
+
+<tr>
+
+<td>has_paired</td>
+
+<td>1</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>lat</td>
+
+<td>44.171576</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body><script type="text/javascript">
+
+				function changeImage(attElement, nameElement) {
+
+				document.getElementById('imageAttachment').src = attElement;
+
+				document.getElementById('imageName').innerHTML = nameElement;}
+
+			</script></html>
+
+]]></description>
+				<styleUrl>#__managed_style_006094B0A93FBAC25C8E</styleUrl>
+				<Point>
+					<coordinates>-78.08448626622774,44.17157563299338,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark id="5C98577AE6000008">
+				<name>BOS-R6</name>
+				<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>2026-02-12</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>FID</td>
+
+<td>5</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>export_dat</td>
+
+<td>2026-02-12</td>
+
+</tr>
+
+<tr>
+
+<td>export_for</td>
+
+<td>SHP</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>core_id</td>
+
+<td>HR_005</td>
+
+</tr>
+
+<tr>
+
+<td>lon</td>
+
+<td>-78.089207</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>type</td>
+
+<td>hr_core</td>
+
+</tr>
+
+<tr>
+
+<td>has_paired</td>
+
+<td>1</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>lat</td>
+
+<td>44.174896</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body><script type="text/javascript">
+
+				function changeImage(attElement, nameElement) {
+
+				document.getElementById('imageAttachment').src = attElement;
+
+				document.getElementById('imageName').innerHTML = nameElement;}
+
+			</script></html>
+
+]]></description>
+				<styleUrl>#__managed_style_006094B0A93FBAC25C8E</styleUrl>
+				<Point>
+					<coordinates>-78.08920692590623,44.17489648316968,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark id="5C98577AE6000009">
+				<name>BOS-R7</name>
+				<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>2026-02-12</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>FID</td>
+
+<td>6</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>export_dat</td>
+
+<td>2026-02-12</td>
+
+</tr>
+
+<tr>
+
+<td>export_for</td>
+
+<td>SHP</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>core_id</td>
+
+<td>HR_006</td>
+
+</tr>
+
+<tr>
+
+<td>lon</td>
+
+<td>-78.088642</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>type</td>
+
+<td>hr_core</td>
+
+</tr>
+
+<tr>
+
+<td>has_paired</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>lat</td>
+
+<td>44.173206</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body><script type="text/javascript">
+
+				function changeImage(attElement, nameElement) {
+
+				document.getElementById('imageAttachment').src = attElement;
+
+				document.getElementById('imageName').innerHTML = nameElement;}
+
+			</script></html>
+
+]]></description>
+				<styleUrl>#__managed_style_006094B0A93FBAC25C8E</styleUrl>
+				<Point>
+					<coordinates>-78.08864184997238,44.17320553165581,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark id="5C98577AE600000A">
+				<name>BOS-R8</name>
+				<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>2026-02-12</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>FID</td>
+
+<td>7</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>export_dat</td>
+
+<td>2026-02-12</td>
+
+</tr>
+
+<tr>
+
+<td>export_for</td>
+
+<td>SHP</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>core_id</td>
+
+<td>HR_007</td>
+
+</tr>
+
+<tr>
+
+<td>lon</td>
+
+<td>-78.091837</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>type</td>
+
+<td>hr_core</td>
+
+</tr>
+
+<tr>
+
+<td>has_paired</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>lat</td>
+
+<td>44.171014</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body><script type="text/javascript">
+
+				function changeImage(attElement, nameElement) {
+
+				document.getElementById('imageAttachment').src = attElement;
+
+				document.getElementById('imageName').innerHTML = nameElement;}
+
+			</script></html>
+
+]]></description>
+				<styleUrl>#__managed_style_006094B0A93FBAC25C8E</styleUrl>
+				<Point>
+					<coordinates>-78.09183660474592,44.1710138536821,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark id="5C98577AE600000B">
+				<name>BOS-09</name>
+				<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>2026-02-12</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>FID</td>
+
+<td>8</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>export_dat</td>
+
+<td>2026-02-12</td>
+
+</tr>
+
+<tr>
+
+<td>export_for</td>
+
+<td>SHP</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>core_id</td>
+
+<td>HR_008</td>
+
+</tr>
+
+<tr>
+
+<td>lon</td>
+
+<td>-78.085387</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>type</td>
+
+<td>hr_core</td>
+
+</tr>
+
+<tr>
+
+<td>has_paired</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>lat</td>
+
+<td>44.171807</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body><script type="text/javascript">
+
+				function changeImage(attElement, nameElement) {
+
+				document.getElementById('imageAttachment').src = attElement;
+
+				document.getElementById('imageName').innerHTML = nameElement;}
+
+			</script></html>
+
+]]></description>
+				<styleUrl>#__managed_style_006094B0A93FBAC25C8E</styleUrl>
+				<Point>
+					<coordinates>-78.0853870616773,44.17180733314392,0</coordinates>
+				</Point>
+			</Placemark>
+		</Folder>
+	</Folder>
+	<Folder id="5C9857B542000001">
+		<name>Pemadash_CompositeSamplingSites</name>
+		<visibility>0</visibility>
+		<styleUrl>#__managed_style_006094B0A93FBAC25C8E</styleUrl>
+		<Folder id="5C9857B542000002">
+			<name>Pemadash_CompositeSamplingSites</name>
+			<styleUrl>#__managed_style_006094B0A93FBAC25C8E</styleUrl>
+			<Placemark id="5C9857B542000003">
+				<name>COMP_P_000</name>
+				<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>COMP_P_000</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>area_m2</td>
+
+<td>400</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>centroid_lat</td>
+
+<td>44.185617</td>
+
+</tr>
+
+<tr>
+
+<td>centroid_lon</td>
+
+<td>-78.096524</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>composite_id</td>
+
+<td>COMP_P_000</td>
+
+</tr>
+
+<tr>
+
+<td>export_date</td>
+
+<td>2026-02-12</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>export_format</td>
+
+<td>GeoJSON</td>
+
+</tr>
+
+<tr>
+
+<td>method</td>
+
+<td>rectangle</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>paired</td>
+
+<td>1</td>
+
+</tr>
+
+<tr>
+
+<td>paired_core_id</td>
+
+<td>HR_000</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>paired_dist_m</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>shape_1</td>
+
+<td>square</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>type</td>
+
+<td>composite</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body><script type="text/javascript">
+
+				function changeImage(attElement, nameElement) {
+
+				document.getElementById('imageAttachment').src = attElement;
+
+				document.getElementById('imageName').innerHTML = nameElement;}
+
+			</script></html>
+
+]]></description>
+				<styleUrl>#__managed_style_07E44672503FBAC25C93</styleUrl>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-78.09664969199997,44.18552711200005,0 -78.09639914699994,44.18552711200005,0 -78.09639914699994,44.18570677500003,0 -78.09664969199997,44.18570677500003,0 -78.09664969199997,44.18552711200005,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+			<Placemark id="5C9857B542000004">
+				<name>COMP_P_001</name>
+				<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>COMP_P_001</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>area_m2</td>
+
+<td>400</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>centroid_lat</td>
+
+<td>44.186529</td>
+
+</tr>
+
+<tr>
+
+<td>centroid_lon</td>
+
+<td>-78.094719</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>composite_id</td>
+
+<td>COMP_P_001</td>
+
+</tr>
+
+<tr>
+
+<td>export_date</td>
+
+<td>2026-02-12</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>export_format</td>
+
+<td>GeoJSON</td>
+
+</tr>
+
+<tr>
+
+<td>method</td>
+
+<td>rectangle</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>paired</td>
+
+<td>1</td>
+
+</tr>
+
+<tr>
+
+<td>paired_core_id</td>
+
+<td>HR_001</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>paired_dist_m</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>shape_1</td>
+
+<td>square</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>type</td>
+
+<td>composite</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body><script type="text/javascript">
+
+				function changeImage(attElement, nameElement) {
+
+				document.getElementById('imageAttachment').src = attElement;
+
+				document.getElementById('imageName').innerHTML = nameElement;}
+
+			</script></html>
+
+]]></description>
+				<styleUrl>#__managed_style_07E44672503FBAC25C93</styleUrl>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-78.09484470499996,44.18643938600007,0 -78.09459415599997,44.18643938600007,0 -78.09459415599997,44.18661904800007,0 -78.09484470499996,44.18661904800007,0 -78.09484470499996,44.18643938600007,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+			<Placemark id="5C9857B542000005">
+				<name>COMP_P_002</name>
+				<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>COMP_P_002</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>area_m2</td>
+
+<td>400</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>centroid_lat</td>
+
+<td>44.184491</td>
+
+</tr>
+
+<tr>
+
+<td>centroid_lon</td>
+
+<td>-78.095932</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>composite_id</td>
+
+<td>COMP_P_002</td>
+
+</tr>
+
+<tr>
+
+<td>export_date</td>
+
+<td>2026-02-12</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>export_format</td>
+
+<td>GeoJSON</td>
+
+</tr>
+
+<tr>
+
+<td>method</td>
+
+<td>rectangle</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>paired</td>
+
+<td>1</td>
+
+</tr>
+
+<tr>
+
+<td>paired_core_id</td>
+
+<td>HR_002</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>paired_dist_m</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>shape_1</td>
+
+<td>square</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>type</td>
+
+<td>composite</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body><script type="text/javascript">
+
+				function changeImage(attElement, nameElement) {
+
+				document.getElementById('imageAttachment').src = attElement;
+
+				document.getElementById('imageName').innerHTML = nameElement;}
+
+			</script></html>
+
+]]></description>
+				<styleUrl>#__managed_style_07E44672503FBAC25C93</styleUrl>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-78.09605741299998,44.18440111700005,0 -78.09580687299996,44.18440111700005,0 -78.09580687299996,44.18458077900004,0 -78.09605741299998,44.18458077900004,0 -78.09605741299998,44.18440111700005,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+			<Placemark id="5C9857B542000006">
+				<name>COMP_P_003</name>
+				<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>COMP_P_003</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>area_m2</td>
+
+<td>400</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>centroid_lat</td>
+
+<td>44.185095</td>
+
+</tr>
+
+<tr>
+
+<td>centroid_lon</td>
+
+<td>-78.09514</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>composite_id</td>
+
+<td>COMP_P_003</td>
+
+</tr>
+
+<tr>
+
+<td>export_date</td>
+
+<td>2026-02-12</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>export_format</td>
+
+<td>GeoJSON</td>
+
+</tr>
+
+<tr>
+
+<td>method</td>
+
+<td>rectangle</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>paired</td>
+
+<td>1</td>
+
+</tr>
+
+<tr>
+
+<td>paired_core_id</td>
+
+<td>HR_003</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>paired_dist_m</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>shape_1</td>
+
+<td>square</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>type</td>
+
+<td>composite</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body><script type="text/javascript">
+
+				function changeImage(attElement, nameElement) {
+
+				document.getElementById('imageAttachment').src = attElement;
+
+				document.getElementById('imageName').innerHTML = nameElement;}
+
+			</script></html>
+
+]]></description>
+				<styleUrl>#__managed_style_07E44672503FBAC25C93</styleUrl>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-78.09526482999996,44.18500525900004,0 -78.09501428699997,44.18500525900004,0 -78.09501428699997,44.18518492100003,0 -78.09526482999996,44.18518492100003,0 -78.09526482999996,44.18500525900004,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+			<Placemark id="5C9857B542000007">
+				<name>COMP_U_000</name>
+				<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>COMP_U_000</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>area_m2</td>
+
+<td>400</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>centroid_lat</td>
+
+<td>44.183529</td>
+
+</tr>
+
+<tr>
+
+<td>centroid_lon</td>
+
+<td>-78.097123</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>composite_id</td>
+
+<td>COMP_U_000</td>
+
+</tr>
+
+<tr>
+
+<td>export_date</td>
+
+<td>2026-02-12</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>export_format</td>
+
+<td>GeoJSON</td>
+
+</tr>
+
+<tr>
+
+<td>method</td>
+
+<td>rectangle</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>paired</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>paired_core_id</td>
+
+<td>&lt;Null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>paired_dist_m</td>
+
+<td>&lt;Null&gt;</td>
+
+</tr>
+
+<tr>
+
+<td>shape_1</td>
+
+<td>square</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>type</td>
+
+<td>composite</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body><script type="text/javascript">
+
+				function changeImage(attElement, nameElement) {
+
+				document.getElementById('imageAttachment').src = attElement;
+
+				document.getElementById('imageName').innerHTML = nameElement;}
+
+			</script></html>
+
+]]></description>
+				<styleUrl>#__managed_style_07E44672503FBAC25C93</styleUrl>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-78.09724857399993,44.18343940800003,0 -78.09699803799998,44.18343940800003,0 -78.09699803799998,44.18361907000008,0 -78.09724857399993,44.18361907000008,0 -78.09724857399993,44.18343940800003,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+			<Placemark id="5C9857B542000009">
+				<name>COMP_U_002</name>
+				<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>COMP_U_002</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>area_m2</td>
+
+<td>400</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>centroid_lat</td>
+
+<td>44.185107</td>
+
+</tr>
+
+<tr>
+
+<td>centroid_lon</td>
+
+<td>-78.093877</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>composite_id</td>
+
+<td>COMP_U_002</td>
+
+</tr>
+
+<tr>
+
+<td>export_date</td>
+
+<td>2026-02-12</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>export_format</td>
+
+<td>GeoJSON</td>
+
+</tr>
+
+<tr>
+
+<td>method</td>
+
+<td>rectangle</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>paired</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>paired_core_id</td>
+
+<td>&lt;Null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>paired_dist_m</td>
+
+<td>&lt;Null&gt;</td>
+
+</tr>
+
+<tr>
+
+<td>shape_1</td>
+
+<td>square</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>type</td>
+
+<td>composite</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body><script type="text/javascript">
+
+				function changeImage(attElement, nameElement) {
+
+				document.getElementById('imageAttachment').src = attElement;
+
+				document.getElementById('imageName').innerHTML = nameElement;}
+
+			</script></html>
+
+]]></description>
+				<styleUrl>#__managed_style_07E44672503FBAC25C93</styleUrl>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-78.09400264699997,44.18501684300003,0 -78.09375210399998,44.18501684300003,0 -78.09375210399998,44.18519650500008,0 -78.09400264699997,44.18519650500008,0 -78.09400264699997,44.18501684300003,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+			<Placemark id="5C9857B54200000A">
+				<name>COMP_U_003</name>
+				<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>COMP_U_003</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>area_m2</td>
+
+<td>400</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>centroid_lat</td>
+
+<td>44.184735</td>
+
+</tr>
+
+<tr>
+
+<td>centroid_lon</td>
+
+<td>-78.091151</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>composite_id</td>
+
+<td>COMP_U_003</td>
+
+</tr>
+
+<tr>
+
+<td>export_date</td>
+
+<td>2026-02-12</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>export_format</td>
+
+<td>GeoJSON</td>
+
+</tr>
+
+<tr>
+
+<td>method</td>
+
+<td>rectangle</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>paired</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>paired_core_id</td>
+
+<td>&lt;Null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>paired_dist_m</td>
+
+<td>&lt;Null&gt;</td>
+
+</tr>
+
+<tr>
+
+<td>shape_1</td>
+
+<td>square</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>type</td>
+
+<td>composite</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body><script type="text/javascript">
+
+				function changeImage(attElement, nameElement) {
+
+				document.getElementById('imageAttachment').src = attElement;
+
+				document.getElementById('imageName').innerHTML = nameElement;}
+
+			</script></html>
+
+]]></description>
+				<styleUrl>#__managed_style_07E44672503FBAC25C93</styleUrl>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-78.09127648699996,44.18464516800003,0 -78.09102594599995,44.18464516800003,0 -78.09102594599995,44.18482483000003,0 -78.09127648699996,44.18482483000003,0 -78.09127648699996,44.18464516800003,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+			<Placemark id="5C9857B54200000B">
+				<name>COMP_U_004</name>
+				<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>COMP_U_004</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>area_m2</td>
+
+<td>400</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>centroid_lat</td>
+
+<td>44.187427</td>
+
+</tr>
+
+<tr>
+
+<td>centroid_lon</td>
+
+<td>-78.096084</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>composite_id</td>
+
+<td>COMP_U_004</td>
+
+</tr>
+
+<tr>
+
+<td>export_date</td>
+
+<td>2026-02-12</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>export_format</td>
+
+<td>GeoJSON</td>
+
+</tr>
+
+<tr>
+
+<td>method</td>
+
+<td>rectangle</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>paired</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>paired_core_id</td>
+
+<td>&lt;Null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>paired_dist_m</td>
+
+<td>&lt;Null&gt;</td>
+
+</tr>
+
+<tr>
+
+<td>shape_1</td>
+
+<td>square</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>type</td>
+
+<td>composite</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body><script type="text/javascript">
+
+				function changeImage(attElement, nameElement) {
+
+				document.getElementById('imageAttachment').src = attElement;
+
+				document.getElementById('imageName').innerHTML = nameElement;}
+
+			</script></html>
+
+]]></description>
+				<styleUrl>#__managed_style_07E44672503FBAC25C93</styleUrl>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-78.09620907099998,44.18733752100007,0 -78.09595851799997,44.18733752100007,0 -78.09595851799997,44.18751718300007,0 -78.09620907099998,44.18751718300007,0 -78.09620907099998,44.18733752100007,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+			<Placemark id="5C9857B54200000C">
+				<name>COMP_U_005</name>
+				<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>COMP_U_005</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>area_m2</td>
+
+<td>400</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>centroid_lat</td>
+
+<td>44.187056</td>
+
+</tr>
+
+<tr>
+
+<td>centroid_lon</td>
+
+<td>-78.093358</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>composite_id</td>
+
+<td>COMP_U_005</td>
+
+</tr>
+
+<tr>
+
+<td>export_date</td>
+
+<td>2026-02-12</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>export_format</td>
+
+<td>GeoJSON</td>
+
+</tr>
+
+<tr>
+
+<td>method</td>
+
+<td>rectangle</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>paired</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>paired_core_id</td>
+
+<td>&lt;Null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>paired_dist_m</td>
+
+<td>&lt;Null&gt;</td>
+
+</tr>
+
+<tr>
+
+<td>shape_1</td>
+
+<td>square</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>type</td>
+
+<td>composite</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body><script type="text/javascript">
+
+				function changeImage(attElement, nameElement) {
+
+				document.getElementById('imageAttachment').src = attElement;
+
+				document.getElementById('imageName').innerHTML = nameElement;}
+
+			</script></html>
+
+]]></description>
+				<styleUrl>#__managed_style_07E44672503FBAC25C93</styleUrl>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-78.09348280499995,44.18696589000007,0 -78.09323225399999,44.18696589000007,0 -78.09323225399999,44.18714555200006,0 -78.09348280499995,44.18714555200006,0 -78.09348280499995,44.18696589000007,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+			<Placemark id="5C9857B54200000D">
+				<name>COMP_U_006</name>
+				<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>COMP_U_006</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>area_m2</td>
+
+<td>400</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>centroid_lat</td>
+
+<td>44.189376</td>
+
+</tr>
+
+<tr>
+
+<td>centroid_lon</td>
+
+<td>-78.095564</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>composite_id</td>
+
+<td>COMP_U_006</td>
+
+</tr>
+
+<tr>
+
+<td>export_date</td>
+
+<td>2026-02-12</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>export_format</td>
+
+<td>GeoJSON</td>
+
+</tr>
+
+<tr>
+
+<td>method</td>
+
+<td>rectangle</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>paired</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>paired_core_id</td>
+
+<td>&lt;Null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>paired_dist_m</td>
+
+<td>&lt;Null&gt;</td>
+
+</tr>
+
+<tr>
+
+<td>shape_1</td>
+
+<td>square</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>type</td>
+
+<td>composite</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body><script type="text/javascript">
+
+				function changeImage(attElement, nameElement) {
+
+				document.getElementById('imageAttachment').src = attElement;
+
+				document.getElementById('imageName').innerHTML = nameElement;}
+
+			</script></html>
+
+]]></description>
+				<styleUrl>#__managed_style_07E44672503FBAC25C93</styleUrl>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-78.09568927399994,44.18928658600004,0 -78.09543871299996,44.18928658600004,0 -78.09543871299996,44.18946624800003,0 -78.09568927399994,44.18946624800003,0 -78.09568927399994,44.18928658600004,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+			<Placemark id="5C9857B54200000E">
+				<name>COMP_U_007</name>
+				<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>COMP_U_007</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>area_m2</td>
+
+<td>400</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>centroid_lat</td>
+
+<td>44.189005</td>
+
+</tr>
+
+<tr>
+
+<td>centroid_lon</td>
+
+<td>-78.092838</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>composite_id</td>
+
+<td>COMP_U_007</td>
+
+</tr>
+
+<tr>
+
+<td>export_date</td>
+
+<td>2026-02-12</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>export_format</td>
+
+<td>GeoJSON</td>
+
+</tr>
+
+<tr>
+
+<td>method</td>
+
+<td>rectangle</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>paired</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>paired_core_id</td>
+
+<td>&lt;Null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>paired_dist_m</td>
+
+<td>&lt;Null&gt;</td>
+
+</tr>
+
+<tr>
+
+<td>shape_1</td>
+
+<td>square</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>type</td>
+
+<td>composite</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body><script type="text/javascript">
+
+				function changeImage(attElement, nameElement) {
+
+				document.getElementById('imageAttachment').src = attElement;
+
+				document.getElementById('imageName').innerHTML = nameElement;}
+
+			</script></html>
+
+]]></description>
+				<styleUrl>#__managed_style_07E44672503FBAC25C93</styleUrl>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-78.09296293299997,44.18891494300004,0 -78.09271237399997,44.18891494300004,0 -78.09271237399997,44.18909460500004,0 -78.09296293299997,44.18909460500004,0 -78.09296293299997,44.18891494300004,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+		</Folder>
+	</Folder>
+	<Folder id="5C9857F310000001">
+		<name>Pemadash_Regular_Sites</name>
+		<visibility>0</visibility>
+		<styleUrl>#__managed_style_006094B0A93FBAC25C8E</styleUrl>
+		<Folder id="5C9857F310000002">
+			<name>Pemadash_Regular_Sites</name>
+			<styleUrl>#__managed_style_006094B0A93FBAC25C8E</styleUrl>
+			<Placemark id="5C9857F310000003">
+				<name>PEM-R1</name>
+				<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>2026-02-12</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>FID</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>export_dat</td>
+
+<td>2026-02-12</td>
+
+</tr>
+
+<tr>
+
+<td>export_for</td>
+
+<td>SHP</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>core_id</td>
+
+<td>HR_000</td>
+
+</tr>
+
+<tr>
+
+<td>lon</td>
+
+<td>-78.096524</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>type</td>
+
+<td>hr_core</td>
+
+</tr>
+
+<tr>
+
+<td>has_paired</td>
+
+<td>1</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>lat</td>
+
+<td>44.185617</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body><script type="text/javascript">
+
+				function changeImage(attElement, nameElement) {
+
+				document.getElementById('imageAttachment').src = attElement;
+
+				document.getElementById('imageName').innerHTML = nameElement;}
+
+			</script></html>
+
+]]></description>
+				<styleUrl>#__managed_style_006094B0A93FBAC25C8E</styleUrl>
+				<Point>
+					<coordinates>-78.09652441933962,44.18561694348449,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark id="5C9857F310000004">
+				<name>PEM-R2</name>
+				<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>2026-02-12</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>FID</td>
+
+<td>1</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>export_dat</td>
+
+<td>2026-02-12</td>
+
+</tr>
+
+<tr>
+
+<td>export_for</td>
+
+<td>SHP</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>core_id</td>
+
+<td>HR_001</td>
+
+</tr>
+
+<tr>
+
+<td>lon</td>
+
+<td>-78.094719</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>type</td>
+
+<td>hr_core</td>
+
+</tr>
+
+<tr>
+
+<td>has_paired</td>
+
+<td>1</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>lat</td>
+
+<td>44.186529</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body><script type="text/javascript">
+
+				function changeImage(attElement, nameElement) {
+
+				document.getElementById('imageAttachment').src = attElement;
+
+				document.getElementById('imageName').innerHTML = nameElement;}
+
+			</script></html>
+
+]]></description>
+				<styleUrl>#__managed_style_006094B0A93FBAC25C8E</styleUrl>
+				<Point>
+					<coordinates>-78.09471943114121,44.18652921688832,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark id="5C9857F310000005">
+				<name>PEM-R3</name>
+				<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>2026-02-12</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>FID</td>
+
+<td>2</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>export_dat</td>
+
+<td>2026-02-12</td>
+
+</tr>
+
+<tr>
+
+<td>export_for</td>
+
+<td>SHP</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>core_id</td>
+
+<td>HR_002</td>
+
+</tr>
+
+<tr>
+
+<td>lon</td>
+
+<td>-78.095932</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>type</td>
+
+<td>hr_core</td>
+
+</tr>
+
+<tr>
+
+<td>has_paired</td>
+
+<td>1</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>lat</td>
+
+<td>44.184491</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body><script type="text/javascript">
+
+				function changeImage(attElement, nameElement) {
+
+				document.getElementById('imageAttachment').src = attElement;
+
+				document.getElementById('imageName').innerHTML = nameElement;}
+
+			</script></html>
+
+]]></description>
+				<styleUrl>#__managed_style_006094B0A93FBAC25C8E</styleUrl>
+				<Point>
+					<coordinates>-78.09593214306317,44.18449094809307,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark id="5C9857F310000006">
+				<name>PEM-R4</name>
+				<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>2026-02-12</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>FID</td>
+
+<td>3</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>export_dat</td>
+
+<td>2026-02-12</td>
+
+</tr>
+
+<tr>
+
+<td>export_for</td>
+
+<td>SHP</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>core_id</td>
+
+<td>HR_003</td>
+
+</tr>
+
+<tr>
+
+<td>lon</td>
+
+<td>-78.09514</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>type</td>
+
+<td>hr_core</td>
+
+</tr>
+
+<tr>
+
+<td>has_paired</td>
+
+<td>1</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>lat</td>
+
+<td>44.185095</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body><script type="text/javascript">
+
+				function changeImage(attElement, nameElement) {
+
+				document.getElementById('imageAttachment').src = attElement;
+
+				document.getElementById('imageName').innerHTML = nameElement;}
+
+			</script></html>
+
+]]></description>
+				<styleUrl>#__managed_style_006094B0A93FBAC25C8E</styleUrl>
+				<Point>
+					<coordinates>-78.09513955878413,44.18509508992435,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark id="5C9857F310000007">
+				<name>PEM-R5</name>
+				<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>2026-02-12</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>FID</td>
+
+<td>4</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>export_dat</td>
+
+<td>2026-02-12</td>
+
+</tr>
+
+<tr>
+
+<td>export_for</td>
+
+<td>SHP</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>core_id</td>
+
+<td>HR_004</td>
+
+</tr>
+
+<tr>
+
+<td>lon</td>
+
+<td>-78.092922</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>type</td>
+
+<td>hr_core</td>
+
+</tr>
+
+<tr>
+
+<td>has_paired</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>lat</td>
+
+<td>44.186731</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body><script type="text/javascript">
+
+				function changeImage(attElement, nameElement) {
+
+				document.getElementById('imageAttachment').src = attElement;
+
+				document.getElementById('imageName').innerHTML = nameElement;}
+
+			</script></html>
+
+]]></description>
+				<styleUrl>#__managed_style_006094B0A93FBAC25C8E</styleUrl>
+				<Point>
+					<coordinates>-78.09292190088723,44.1867313722575,0</coordinates>
+				</Point>
+			</Placemark>
+		</Folder>
+	</Folder>
+</Document>
+</kml>

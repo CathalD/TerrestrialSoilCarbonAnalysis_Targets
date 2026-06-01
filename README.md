@@ -114,12 +114,19 @@ for and what it found.
 
 ## Test data
 
-Sample data for a southern Ontario restoration chronosequence is in
-`Pre-Analysis Data Preparation/data_raw/`:
+Example data for the Alderville (Ontario) prairie **restoration chronosequence**
+is in `Pre-Analysis Data Preparation/data_raw/`:
 
-- `core_locations.csv` — 8 cores across 4 restoration-age strata
-- `core_samples.csv` — 98 depth samples
-- `Alderville_Restoration.geojson` — site boundary with strata polygons
+- `core_locations.csv` — 38 sampling sites (14 high-res + 24 composite); each
+  site's stratum is assigned by spatial join into the AOI restoration-age polygons
+- `core_samples.csv` — 376 depth samples. **Note:** the SOC and bulk-density
+  values are SYNTHETIC — the sampling design carries no lab measurements, so these
+  are mock profiles for demoing the pipeline only, **not for reporting**.
+- `Alderville_Restoration.geojson` — area-of-interest boundary with the
+  restoration-age strata (`Restoratio` = 0_5 / 5_10 / 10_15 / 15_20 / Remnant)
+
+Sites and synthetic profiles are regenerated from the sampling-design KML by
+`Pre-Analysis Data Preparation/Sampling_Design/build_field_data_from_kml.py`.
 
 ---
 

@@ -19,7 +19,10 @@ write_config <- function(
 
   # Default BD values by common stratum code
   bd_lookup <- c(F = 0.90, GL = 1.20, CL = 1.30, PL = 0.15, SL = 1.10,
-                 WL = 0.80, Forest = 0.90, Grassland = 1.20, Cropland = 1.30)
+                 WL = 0.80, Forest = 0.90, Grassland = 1.20, Cropland = 1.30,
+                 # Restoration-age classes (bulk density declines with age)
+                 `0_5` = 1.30, `5_10` = 1.20, `10_15` = 1.12, `15_20` = 1.05,
+                 Remnant = 0.95)
   bd_entries <- paste(vapply(valid_strata, function(s) {
     default_val <- if (s %in% names(bd_lookup)) bd_lookup[[s]] else 1.0
     sprintf('  "%s" = %.2f', s, default_val)
@@ -77,8 +80,8 @@ write_config <- function(
     stratum_field_line,
     "",
     "# ── Land-use strata ──────────────────────────────────────────────",
-    "# Must match the `stratum` column in core_locations.csv.",
-    "# Common codes: F (Forest), GL (Grassland), CL (Cropland), PL (Peatland)",
+    "# Must match the `stratum` column in core_locations.csv (and any AOI stratum field).",
+    "# Codes are user-defined: e.g. land-use (F, GL, CL) or restoration-age (0_5 ... Remnant).",
     paste0("VALID_STRATA <- ", strata_str),
     "",
     paste0("STRATUM_COLORS <- ", colors_str),
