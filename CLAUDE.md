@@ -7,7 +7,8 @@ Spatial prediction of soil organic carbon (SOC) stocks in terrestrial ecosystems
 
 The pipeline takes field soil cores → harmonizes depths → extracts remote sensing
 covariates globally and locally → predicts stocks across a full site raster →
-estimates uncertainty at 90% confidence.
+reports uncertainty at 90% confidence (currently implemented for the
+transfer-learning tiers; see the status notes below).
 
 Depth reporting aligns with IPCC Tier 2 standards: 0–30 cm (topsoil) and
 0–100 cm (full mineral profile).
@@ -67,7 +68,7 @@ TerrestrialSoilCarbonAnalysis_Targets/   # repository / RStudio project root
 ├── Pre-Analysis Data Preparation/
 │   ├── data_raw/                 # Local field data + GEE exports
 │   │   ├── core_locations.csv    # core_id, latitude, longitude, stratum
-│   │   ├── core_samples.csv      # core_id, depth_cm, soc_g_kg, bulk_density_g_cm3
+│   │   ├── core_samples.csv      # core_id, depth_top_cm, depth_bottom_cm, soc_g_kg, bulk_density_g_cm3
 │   │   └── TerrestrialSOC_GlobalCorePoints_Covariates.csv  # written by preanalysis pipeline
 │   ├── data_global/              # Global soil profile databases
 │   │   ├── wosis_layers.csv      # WoSIS 2023 (output of 01_WOSIS_harmonize.R)
@@ -188,8 +189,12 @@ Standard aggregates:
   0–30 cm  = sum of depth intervals 1 + 2  (IPCC Tier 2 topsoil)
   0–100 cm = sum of all 4 depth intervals   (IPCC full profile)
 
-Uncertainty: 90% prediction intervals (conservative reporting bound)
-CV strategy: leave-one-CORE-out (not leave-one-observation-out)
+Uncertainty target: 90% prediction intervals (conservative reporting bound).
+  STATUS — currently produced only as a manual post-hoc calc for the
+  transfer-learning tiers (see PIPELINE.md). The non-spatial and RF spatial
+  tiers report point estimates only; design-based / QRF intervals are next.
+CV strategy: leave-one-CORE-out for the transfer-learning tiers. The RF spatial
+  tier currently uses an 80/20 holdout (n >= 10) or OOB error (n < 10), NOT LOCO.
 ```
 
 Always read from `cfg$DEPTH_MIDPOINTS` — never hardcode.
@@ -202,8 +207,8 @@ Always read from `cfg$DEPTH_MIDPOINTS` — never hardcode.
 cfg$PROJECT_NAME
 cfg$DEPTH_MIDPOINTS          # c(7.5, 22.5, 45, 80)
 cfg$DEPTH_INTERVALS          # data.frame with depth_top/bottom/midpoint/thickness_cm
-cfg$BD_DEFAULTS              # list(F=0.90, GL=1.20, CL=1.30) g/cm³
-cfg$VALID_STRATA             # c("F", "GL", "CL")
+cfg$BD_DEFAULTS              # per-stratum g/cm³ (example: F=0.90, GL=1.20, CL=1.30)
+cfg$VALID_STRATA             # user-defined codes (bundled config: restoration age classes)
 cfg$COVARIATE_RASTER         # path to local GEE raster (28-band)
 cfg$DATA_GLOBAL_DIR          # "Pre-Analysis Data Preparation/data_global"
 cfg$BAND_LABELS              # named vector: raster band name → human-readable label

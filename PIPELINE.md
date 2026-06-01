@@ -95,7 +95,12 @@ Band names follow the pattern `d{midpoint}_{suffix}` with `.` replaced by `_`
 
 ---
 
-## Uncertainty
+## Uncertainty (transfer-learning tiers only)
+
+> **Status:** uncertainty is currently produced **only** for the transfer-learning
+> tiers, and only via the manual post-hoc calculation below. The non-spatial
+> (Steps 1–2) and RF spatial (Step 3) tiers report point estimates; design-based
+> and quantile-regression-forest intervals for those tiers are on the roadmap.
 
 Uncertainty is reported at **90% confidence** (IPCC Tier 2 convention):
 
@@ -148,7 +153,8 @@ targets::tar_make(
 
 ## Scientific references
 
-- Bishop et al. (1999). Equal-area splines. *Geoderma*, 91, 27–45.
+- Fritsch & Carlson (1980). Monotone piecewise cubic interpolation. *SIAM J. Numer. Anal.*, 17, 238–246. (current depth interpolation)
+- Bishop et al. (1999). Equal-area (mass-preserving) splines. *Geoderma*, 91, 27–45. (recommended depth-harmonization upgrade)
 - Gregorich, E.G. et al. (1994). Towards a minimum data set to assess soil organic matter quality in agricultural soils. *Canadian Journal of Soil Science*, 74(4), 367–385.
 - Wadoux et al. (2021). Knowledge discovery and machine learning in digital soil mapping. *European Journal of Soil Science*, 71, 133–136.
 - Hengl et al. (2017). SoilGrids250m. *PLOS ONE*, 12(2), e0169748.
