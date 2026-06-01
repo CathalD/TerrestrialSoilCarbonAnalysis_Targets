@@ -92,8 +92,10 @@ stratum_summary |>
 
 ## Step 2 — Simple extrapolation
 
-Mean harmonized stock per stratum summed across IPCC Tier 2 depth intervals.
-Total stock columns appear once `AOI_FILE` is set in `soil_carbon_config.R`.
+Per-stratum carbon **density** (kg C/m² and Mg C/ha), summed across the IPCC
+Tier 2 depth intervals. Absolute **total stock** columns (`total_stock_kg`,
+`total_stock_MgC`) appear only when both `AOI_FILE` and `AOI_STRATUM_FIELD` are
+set in `soil_carbon_config.R` and the polygon's stratum values match your cores.
 
 ```{r}
 step2_extrapolation |>

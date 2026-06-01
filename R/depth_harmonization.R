@@ -2,7 +2,8 @@
 # ============================================================================
 # PURPOSE: Harmonize raw depth profiles to standard analysis depths.
 #
-# METHOD: Hybrid equal-area spline (monoH.FC) + exponential decay extrapolation.
+# METHOD: Hybrid monotone Hermite spline (monoH.FC) + exponential decay extrapolation.
+#         (A mass-preserving / equal-area spline is a recommended future upgrade.)
 #
 # DEFAULT DEPTHS (midpoints): 7.5, 22.5, 45, 80 cm
 # LAYER THICKNESSES:           15,   15, 30, 40 cm
@@ -23,7 +24,7 @@
 #   soc_harmonized, bd_harmonized,
 #   carbon_stock_kg_m2,
 #   is_extrapolated — TRUE if target depth exceeded measured range
-#   rmse, r2        — spline fit diagnostics at original measurement depths
+#   rmse, r2        — leave-one-layer-out fit diagnostics (honest interpolation error)
 #   qa_monotonic    — SOC decreasing with depth (Spearman rho < -0.3)
 # ============================================================================
 harmonize_depths <- function(cores_raw, cfg) {
@@ -46,17 +47,30 @@ harmonize_depths <- function(cores_raw, cfg) {
   message(sprintf("[harmonization] Processing %d cores...",
                   n_distinct(cores_qa$core_id)))
 
-  # ── Helper: spline fit diagnostics ───────────────────────────────────────
+  # ── Helper: leave-one-layer-out fit diagnostics ──────────────────────────
+  # The interpolating spline passes through every observed layer, so in-sample
+  # residuals are ~0 and tell us nothing. Leave-one-layer-out refits the spline
+  # without each layer and predicts it — an honest interpolation-error estimate.
+  # Needs >= 3 layers; returns NA otherwise (r2 may be negative, by design).
   get_diagnostics <- function(core_df) {
-    tryCatch({
-      fn    <- splinefun(core_df$depth_cm, core_df$soc_g_kg, method = "monoH.FC")
-      preds <- fn(core_df$depth_cm)
-      resid <- core_df$soc_g_kg - preds
-      list(
-        rmse = sqrt(mean(resid^2)),
-        r2   = 1 - sum(resid^2) / sum((core_df$soc_g_kg - mean(core_df$soc_g_kg))^2)
-      )
-    }, error = function(e) list(rmse = NA_real_, r2 = NA_real_))
+    d <- core_df$depth_cm
+    y <- core_df$soc_g_kg
+    n <- length(d)
+    if (n < 3) return(list(rmse = NA_real_, r2 = NA_real_))
+    preds <- rep(NA_real_, n)
+    for (i in seq_len(n)) {
+      fit <- tryCatch(splinefun(d[-i], y[-i], method = "monoH.FC"),
+                      error = function(e) NULL)
+      if (!is.null(fit)) preds[i] <- fit(d[i])
+    }
+    ok <- !is.na(preds)
+    if (sum(ok) < 2) return(list(rmse = NA_real_, r2 = NA_real_))
+    resid  <- y[ok] - preds[ok]
+    ss_tot <- sum((y[ok] - mean(y[ok]))^2)
+    list(
+      rmse = sqrt(mean(resid^2)),
+      r2   = if (ss_tot > 0) 1 - sum(resid^2) / ss_tot else NA_real_
+    )
   }
 
   # ── Helper: hybrid spline + decay fit ────────────────────────────────────

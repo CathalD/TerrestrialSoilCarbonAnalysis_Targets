@@ -2,8 +2,9 @@
 # PURPOSE: Load, merge, and prepare core data for analysis.
 #   1. Reads core_locations.csv and core_samples.csv
 #   2. Merges on core_id
-#   3. Fills missing bulk density from cfg$BD_DEFAULTS (by stratum)
-#   4. Computes carbon_stock_kg_m2 = SOC x BD x thickness / 100
+#   3. Applies QC_* thresholds — out-of-range SOC / bulk density set to NA
+#   4. Fills missing bulk density from cfg$BD_DEFAULTS (by stratum)
+#   5. Computes carbon_stock_kg_m2 = SOC x BD x thickness / 100
 load_raw_data <- function(locations_path, samples_path, cfg = NULL) {
   suppressPackageStartupMessages({
     library(dplyr)
@@ -32,6 +33,36 @@ load_raw_data <- function(locations_path, samples_path, cfg = NULL) {
       depth_cm           = (depth_top_cm + depth_bottom_cm) / 2,
       layer_thickness_cm = depth_bottom_cm - depth_top_cm
     )
+
+  # ── QC gates ──────────────────────────────────────────────────────────────
+  # Enforce the QC_* thresholds from config so out-of-range measurements (unit
+  # errors, typos) don't propagate into carbon stocks. Offending values are set
+  # to NA rather than dropped: NA SOC drops that layer in harmonization; NA bulk
+  # density is back-filled from BD_DEFAULTS below.
+  soc_min <- if (is.null(cfg$QC_SOC_MIN)) -Inf else cfg$QC_SOC_MIN
+  soc_max <- if (is.null(cfg$QC_SOC_MAX))  Inf else cfg$QC_SOC_MAX
+  bd_min  <- if (is.null(cfg$QC_BD_MIN))  -Inf else cfg$QC_BD_MIN
+  bd_max  <- if (is.null(cfg$QC_BD_MAX))   Inf else cfg$QC_BD_MAX
+
+  soc_bad <- !is.na(cores$soc_g_kg) &
+    (cores$soc_g_kg < soc_min | cores$soc_g_kg > soc_max)
+  bd_bad <- !is.na(cores$bulk_density_g_cm3) &
+    (cores$bulk_density_g_cm3 < bd_min | cores$bulk_density_g_cm3 > bd_max)
+
+  if (any(soc_bad)) {
+    message(sprintf(
+      "[data_prep] QC: %d SOC value(s) outside [%g, %g] g/kg set to NA (cores: %s).",
+      sum(soc_bad), soc_min, soc_max,
+      paste(sort(unique(cores$core_id[soc_bad])), collapse = ", ")))
+    cores$soc_g_kg[soc_bad] <- NA_real_
+  }
+  if (any(bd_bad)) {
+    message(sprintf(
+      "[data_prep] QC: %d bulk-density value(s) outside [%g, %g] g/cm3 set to NA (cores: %s).",
+      sum(bd_bad), bd_min, bd_max,
+      paste(sort(unique(cores$core_id[bd_bad])), collapse = ", ")))
+    cores$bulk_density_g_cm3[bd_bad] <- NA_real_
+  }
 
   # Apply BD defaults where bulk_density_g_cm3 is missing
   bd_defaults <- cfg$BD_DEFAULTS
