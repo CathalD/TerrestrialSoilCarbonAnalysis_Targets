@@ -32,7 +32,7 @@ Depth reporting aligns with IPCC Tier 2 standards: 0–30 cm (topsoil) and
 ## Repository layout
 
 ```
-pipeline/
+TerrestrialSoilCarbonAnalysis_Targets/   # repository / RStudio project root
 ├── _targets.R                    # Main pipeline (Steps 1–3)
 ├── _targets_transfer.R           # Transfer learning pipeline (Step 4 — Wadoux)
 ├── _targets_preanalysis.R        # Pre-analysis: global GEE covariate extraction
