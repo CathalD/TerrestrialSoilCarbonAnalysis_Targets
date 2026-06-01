@@ -64,13 +64,13 @@ eda_plots$carbon_stocks
 
 ### Method
 
-Profiles harmonized to VM0033 standard depths using a hybrid approach:
+Profiles harmonized to IPCC Tier 2 standard depths (0–15, 15–30, 30–60, 60–100 cm) using a hybrid approach:
 
 - **Interpolation** (within measured range): monotone Hermite spline (`monoH.FC`).
 - **Extrapolation** (beyond measured range): exponential decay if Spearman ρ < −0.3
   and n ≥ 3 per core; constant otherwise. Capped at 2.5× maximum measured depth.
 
-Target depth midpoints: `r paste(cfg$VM0033_DEPTH_MIDPOINTS, "cm", collapse = ", ")`.
+Target depth midpoints: `r paste(cfg$DEPTH_MIDPOINTS, "cm", collapse = ", ")`.
 
 ### Results
 
@@ -87,13 +87,13 @@ stratum_summary |>
     `Mean BD (g/cm³)`    = mean_bd,
     `% extrapolated`     = pct_extrapolated
   ) |>
-  kable(caption = "Harmonized carbon stocks at VM0033 standard depth intervals.")
+  kable(caption = "Harmonized carbon stocks at IPCC Tier 2 standard depth intervals.")
 ```
 
 ## Step 2 — Simple extrapolation
 
-Mean harmonized stock per stratum summed across VM0033 depth intervals.
-Total stock columns appear once `AOI_FILE` is set in `blue_carbon_config.R`.
+Mean harmonized stock per stratum summed across IPCC Tier 2 depth intervals.
+Total stock columns appear once `AOI_FILE` is set in `soil_carbon_config.R`.
 
 ```{r}
 step2_extrapolation |>

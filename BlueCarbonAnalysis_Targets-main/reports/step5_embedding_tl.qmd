@@ -90,7 +90,7 @@ summary_df <- emb_tl_maps$summary
 summary_df |>
   mutate(
     depth_interval = {
-      di <- cfg_emb$DEPTH_INTERVALS %||% cfg_emb$VM0033_DEPTH_INTERVALS
+      di <- cfg_emb$DEPTH_INTERVALS
       if (!is.null(di)) {
         lbl <- paste0(di$depth_top, "–", di$depth_bottom, " cm")
         lbl[match(depth_cm, di$depth_midpoint)]

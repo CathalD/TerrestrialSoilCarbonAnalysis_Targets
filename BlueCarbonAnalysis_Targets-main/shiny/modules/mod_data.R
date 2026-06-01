@@ -45,18 +45,18 @@ mod_data_ui <- function(id) {
             tags$strong("core_locations.csv"),
             tags$pre(class = "csv-example",
 "core_id,latitude,longitude,stratum
-SITE_01,48.899,-123.671,IM
-SITE_02,48.901,-123.675,NM
-SITE_03,48.897,-123.668,MF")
+SITE_01,44.172,-78.091,F
+SITE_02,44.180,-78.113,F
+SITE_03,44.165,-78.078,GL")
           ),
           div(
             tags$strong("core_samples.csv"),
             tags$pre(class = "csv-example",
 "core_id,depth_top_cm,depth_bottom_cm,soc_g_kg,bulk_density_g_cm3
-SITE_01,0,10,87.4,0.42
-SITE_01,10,20,64.2,0.51
-SITE_01,20,50,45.1,0.63
-SITE_01,50,100,28.7,")
+SITE_01,0,10,28.5,0.95
+SITE_01,10,20,18.2,1.05
+SITE_01,20,50,11.4,1.15
+SITE_01,50,100,6.8,")
           )
         )
       )

@@ -3,7 +3,8 @@ mod_run_ui <- function(id) {
   tagList(
     div(class = "step-intro",
       h4("Run Pipeline 1 — Core Data Processing."),
-      p("This step harmonizes your field cores to VM0033 standard depths, ",
+      p("This step harmonizes your field cores to IPCC Tier 2 standard depths ",
+        "(0–15, 15–30, 30–60, 60–100 cm), ",
         "generates exploratory plots, and (if a raster is available) fits a ",
         "random forest spatial model. Typical runtime: 5–15 minutes.")
     ),

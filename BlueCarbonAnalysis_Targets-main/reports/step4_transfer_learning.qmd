@@ -106,7 +106,7 @@ if (nrow(summary_df) == 0) {
 | **TL R²** | Cross-validation R² after bias correction. Negative values are possible when N_local is tiny and the global model is biased. |
 | **Global R²** | Same but without the bias correction. A positive improvement from Global to TL confirms the correction is helping. |
 
-> **VM0033 guidance:** the standard requires uncertainty at the 90% confidence
+> **IPCC Tier 2 guidance:** uncertainty should be reported at the 90% confidence
 > level. Total prediction SE = √(bias_SE² + residual_variance). With N_local < 10,
 > the bias SE dominates — collect more cores to narrow this interval.
 
@@ -170,7 +170,7 @@ print(tl_maps$heatmap)
 
 ## How to use these outputs
 
-**For VM0033 reporting:**
+**For IPCC Tier 2 reporting:**
 
 The Transfer Final rasters (`outputs/transfer/tl_carbon_stocks_kg_m2.tif`)
 are the recommended prediction surfaces. Bands per depth are named:

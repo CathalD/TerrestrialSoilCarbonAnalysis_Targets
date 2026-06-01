@@ -12,7 +12,7 @@ mod_setup_ui <- function(id) {
         div(class = "row g-3",
           div(class = "col-md-8",
             textInput(ns("project_name"), "Project name *",
-              placeholder = "e.g. Chemainus_Estuary_2026")
+              placeholder = "e.g. SouthernOntario_Forest_2026")
           ),
           div(class = "col-md-4",
             numericInput(ns("monitoring_year"), "Monitoring year *",
@@ -21,7 +21,7 @@ mod_setup_ui <- function(id) {
           )
         ),
         textInput(ns("project_location"), "Site location *",
-          placeholder = "e.g. Chemainus Estuary, British Columbia, Canada")
+          placeholder = "e.g. Algonquin Region, Ontario, Canada")
       )
     ),
 

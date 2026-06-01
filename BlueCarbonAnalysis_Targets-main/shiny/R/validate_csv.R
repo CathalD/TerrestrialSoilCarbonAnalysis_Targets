@@ -100,7 +100,7 @@ validate_samples_csv <- function(df) {
     if (n_missing > 0) {
       warnings <- c(warnings, paste0(
         n_missing, " sample(s) are missing bulk_density_g_cm3 — ",
-        "the ecosystem default (0.8 g/cm³) will be used for those rows."
+        "a stratum-specific default from the project configuration will be used for those rows."
       ))
     }
     bd_ok <- bd[!is.na(bd)]
@@ -110,7 +110,7 @@ validate_samples_csv <- function(df) {
   } else {
     warnings <- c(warnings, paste0(
       "Column 'bulk_density_g_cm3' not found — ",
-      "the ecosystem default (0.8 g/cm³) will be used for all samples."
+      "stratum-specific defaults from the project configuration will be used for all samples."
     ))
   }
 

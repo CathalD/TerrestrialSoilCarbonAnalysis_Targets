@@ -24,7 +24,7 @@ source(file.path(getwd(), "modules", "mod_files.R"))
 STEPS <- list(
   list(id = "step1", label = "1. Project Setup"),
   list(id = "step2", label = "2. Field Data"),
-  list(id = "step3", label = "3. Raster & AOI"),
+  list(id = "step3", label = "3. Site Boundary"),
   list(id = "step4", label = "4. Save & Configure")
 )
 

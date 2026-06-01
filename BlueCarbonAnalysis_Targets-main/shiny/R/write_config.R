@@ -6,6 +6,7 @@ write_config <- function(
   gee_project      = "",
   covariate_raster = "",
   aoi_file         = NULL,
+  stratum_field    = NULL,
   output_path      = "soil_carbon_config.R"
 ) {
   strata_str <- paste0('c(', paste0('"', trimws(valid_strata), '"', collapse = ', '), ')')
@@ -43,6 +44,12 @@ write_config <- function(
     paste0('AOI_FILE <- "', trimws(aoi_file), '"')
   }
 
+  stratum_field_line <- if (is.null(stratum_field) || nchar(trimws(stratum_field)) == 0) {
+    'AOI_STRATUM_FIELD <- NULL  # column in AOI_FILE identifying strata'
+  } else {
+    paste0('AOI_STRATUM_FIELD <- "', trimws(stratum_field), '"')
+  }
+
   lines <- c(
     "# ============================================================================",
     "# TERRESTRIAL SOIL CARBON PROJECT CONFIGURATION",
@@ -67,7 +74,7 @@ write_config <- function(
     covar_line,
     "",
     aoi_line,
-    "AOI_STRATUM_FIELD <- NULL",
+    stratum_field_line,
     "",
     "# ── Land-use strata ──────────────────────────────────────────────",
     "# Must match the `stratum` column in core_locations.csv.",
