@@ -49,8 +49,8 @@ mod_files_server <- function(id, project_root) {
               ),
               tags$tbody(
                 file_status_row(
-                  label = "blue_carbon_config.R",
-                  path  = file.path(project_root, "blue_carbon_config.R"),
+                  label = "soil_carbon_config.R",
+                  path  = file.path(project_root, "soil_carbon_config.R"),
                   note  = if (!is.null(cfg$PROJECT_NAME))
                     paste0("Project: ", cfg$PROJECT_NAME)
                 ),
@@ -123,7 +123,7 @@ mod_files_server <- function(id, project_root) {
               ),
               tags$tbody(
                 raster_dir_row(project_root, "outputs/rf",
-                  "RF prediction maps — one band per VM0033 depth interval + total"),
+                  "RF prediction maps — one band per IPCC Tier 2 depth interval + total"),
                 raster_dir_row(project_root, "outputs/transfer",
                   "Wadoux TL maps — Global Prior, Transfer Final, Local Only, Difference"),
                 raster_dir_row(project_root, "outputs/embedding",
@@ -138,8 +138,8 @@ mod_files_server <- function(id, project_root) {
           bslib::card_header("Folder map — where to find everything"),
           bslib::card_body(
             tags$pre(class = "bg-light p-3 rounded mb-0", style = "font-size: 12px;",
-'BlueCarbonAnalysis_Targets/
-├── blue_carbon_config.R          ← your project settings
+'TerrestrialSoilCarbonAnalysis/
+├── soil_carbon_config.R          ← your project settings
 ├── reports/
 │   ├── step1_nonspatial.html     ← non-spatial analysis report
 │   ├── step3_random_forest.html  ← RF spatial map report
@@ -179,7 +179,7 @@ mod_files_server <- function(id, project_root) {
 # ── Helpers ────────────────────────────────────────────────────────────────────
 
 read_project_config_files <- function(project_root) {
-  config_path <- file.path(project_root, "blue_carbon_config.R")
+  config_path <- file.path(project_root, "soil_carbon_config.R")
   if (!file.exists(config_path)) return(list())
   e <- new.env(parent = emptyenv())
   tryCatch(

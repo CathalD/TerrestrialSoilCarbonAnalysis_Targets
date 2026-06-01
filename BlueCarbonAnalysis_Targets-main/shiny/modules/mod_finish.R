@@ -2,10 +2,13 @@ mod_finish_ui <- function(id) {
   ns <- NS(id)
   tagList(
     div(class = "step-intro",
-      h4("Choose your analyses and save."),
+      h4("Review and save your setup."),
       p("The non-spatial analysis always runs. Spatial and transfer learning options ",
         "are available when a raster and GEE project are configured.")
     ),
+
+    # ── Data sufficiency check ─────────────────────────────────────────────
+    uiOutput(ns("data_sufficiency")),
 
     # ── What you'll get ────────────────────────────────────────────────────
     uiOutput(ns("analysis_menu")),
@@ -32,6 +35,76 @@ mod_finish_server <- function(id, setup_state, data_state, raster_state, project
     has_raster <- reactive({ isTRUE(raster_state()$has_raster) })
     has_gee    <- reactive({ nchar(trimws(setup_state()$gee_project)) > 0 })
 
+    # ── Data sufficiency check ─────────────────────────────────────────────
+    output$data_sufficiency <- renderUI({
+      d <- data_state()
+      r <- raster_state()
+      if (is.null(d$locations) || nrow(d$locations) == 0) return(NULL)
+
+      cores_df <- d$locations
+      strata_in_cores <- unique(as.character(cores_df$stratum))
+      cores_per_stratum <- table(as.character(cores_df$stratum))
+
+      errors   <- character(0)
+      warnings <- character(0)
+
+      # Warn on low core counts per stratum
+      for (s in names(cores_per_stratum)) {
+        n <- as.integer(cores_per_stratum[[s]])
+        if (n < 3) {
+          warnings <- c(warnings, paste0(
+            "Stratum ‘", s, "’ has only ", n,
+            if (n == 1) " core" else " cores",
+            " — IPCC Tier 2 recommends ≥ 3 for a reliable stock estimate. ",
+            "Consider collecting more samples."
+          ))
+        }
+      }
+
+      # Cross-check with GeoJSON strata if available
+      si <- r$strata_info
+      if (!is.null(si) && isTRUE(si$has_strata)) {
+        geojson_strata <- as.character(si$strata)
+
+        no_cores <- setdiff(geojson_strata, strata_in_cores)
+        if (length(no_cores) > 0) {
+          errors <- c(errors, paste0(
+            "No field cores in strat", if (length(no_cores) == 1) "um" else "a",
+            ": ‘", paste(no_cores, collapse = "’, ‘"), "’.",
+            " Carbon stock cannot be estimated for these areas. ",
+            "Consider sampling these strata before finalising the report."
+          ))
+        }
+
+        unmapped <- setdiff(strata_in_cores, geojson_strata)
+        if (length(unmapped) > 0) {
+          warnings <- c(warnings, paste0(
+            "Cores labelled ‘", paste(unmapped, collapse = "’, ‘"),
+            "’ do not match any stratum in the GeoJSON — ",
+            "no area will be calculated for these cores."
+          ))
+        }
+      }
+
+      if (length(errors) == 0 && length(warnings) == 0) {
+        div(class = "alert alert-success mb-3",
+          tags$strong("✓ Data check passed. "),
+          paste0(nrow(cores_df), " core(s) across ",
+                 length(strata_in_cores), " stratum/strata."))
+      } else {
+        tagList(
+          if (length(errors) > 0)
+            div(class = "alert alert-danger mb-2",
+              tags$strong(paste0("⚠ ", length(errors), " data gap(s) found:")),
+              tags$ul(lapply(errors, tags$li))),
+          if (length(warnings) > 0)
+            div(class = "alert alert-warning mb-2",
+              tags$strong(paste0("ℹ ", length(warnings), " note(s) for your attention:")),
+              tags$ul(lapply(warnings, tags$li)))
+        )
+      }
+    })
+
     # ── Analysis menu ──────────────────────────────────────────────────────
     output$analysis_menu <- renderUI({
       r <- has_raster()
@@ -49,9 +122,9 @@ mod_finish_server <- function(id, setup_state, data_state, raster_state, project
             badge    = "Always included",
             badge_cls = "bg-success",
             items    = c(
-              "Depth harmonization to VM0033 standard intervals",
-              "Per-stratum carbon stock table (kg C/m²) — core VM0033 reporting values",
-              "Exploratory plots: depth profiles, spatial map, stock distributions",
+              "Depth harmonization to IPCC Tier 2 standard intervals (0–15, 15–30, 30–60, 60–100 cm)",
+              "Per-stratum carbon stock table (kg C/m²) — IPCC Tier 2 reporting values",
+              "Exploratory plots: depth profiles, core location map, stock distributions",
               "HTML report: reports/step1_nonspatial.html"
             )
           ),
@@ -81,7 +154,7 @@ mod_finish_server <- function(id, setup_state, data_state, raster_state, project
             badge     = if (r && g) "Optional" else "Requires raster + GEE",
             badge_cls = if (r && g) "bg-info text-dark" else "bg-secondary",
             items     = c(
-              "Borrows signal from ~952 global wetland cores weighted by site similarity",
+              "Borrows signal from global terrestrial soil profiles weighted by site similarity",
               "Bias-corrected predictions + 500-replicate bootstrap uncertainty",
               "HTML report: reports/step4_transfer_learning.html"
             )
@@ -176,7 +249,8 @@ mod_finish_server <- function(id, setup_state, data_state, raster_state, project
           gee_project      = s$gee_project,
           covariate_raster = r$raster_path,
           aoi_file         = r$aoi_dest,
-          output_path      = file.path(project_root, "blue_carbon_config.R")
+          stratum_field    = if (!is.null(r$strata_info)) r$strata_info$stratum_field else NULL,
+          output_path      = file.path(project_root, "soil_carbon_config.R")
         )
         TRUE
       }, error = function(e) { save_err(conditionMessage(e)); FALSE })

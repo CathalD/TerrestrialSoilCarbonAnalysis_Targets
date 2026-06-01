@@ -14,8 +14,8 @@ mod_results_ui <- function(id) {
           tabPanel("Stratum Summary",
             div(class = "p-3",
               p(class = "text-muted",
-                "Mean carbon stock (kg C/m²) at each VM0033 depth interval, ",
-                "grouped by ecosystem stratum. These are the core VM0033 reporting values."),
+                "Mean carbon stock (kg C/m²) at each IPCC Tier 2 depth interval, ",
+                "grouped by ecosystem stratum. These are the core IPCC Tier 2 reporting values."),
               DT::dataTableOutput(ns("summary_table"))
             )
           ),
@@ -76,7 +76,7 @@ ee_Initialize(user = \"your.email@gmail.com\", drive = TRUE)"),
         div(class = "alert alert-info mt-3",
           tags$strong("ℹ Your project folder is ready."),
           " All configuration files and data have been saved. ",
-          "Open ", code("BlueCarbonAnalysis_Targets.Rproj"), " in RStudio to continue."
+          "Open the project ", code(".Rproj"), " file in RStudio to continue."
         )
       )
     )
@@ -98,7 +98,7 @@ mod_results_server <- function(id, project_root) {
       req(!is.null(df))
 
       DT::datatable(df,
-        caption  = "Carbon stock (kg C/m²) by stratum and VM0033 depth interval",
+        caption  = "Carbon stock (kg C/m²) by stratum and IPCC Tier 2 depth interval",
         options  = list(pageLength = 20, dom = "t"),
         rownames = FALSE
       ) |>
