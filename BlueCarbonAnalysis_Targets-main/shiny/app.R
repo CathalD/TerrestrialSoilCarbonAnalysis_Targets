@@ -3,6 +3,7 @@ suppressPackageStartupMessages({
   library(bslib)
   library(DT)
   library(readr)
+  library(sf)
 })
 
 `%||%` <- function(a, b) if (is.null(a)) b else a
@@ -97,7 +98,7 @@ server <- function(input, output, session) {
   # Module servers
   setup_state  <- mod_setup_server("setup")
   data_state   <- mod_data_server("data", setup_state)
-  raster_state <- mod_raster_server("raster", PROJECT_ROOT)
+  raster_state <- mod_raster_server("raster", PROJECT_ROOT, setup_state)
   mod_finish_server("finish", setup_state, data_state, raster_state, PROJECT_ROOT)
   mod_guide_server("guide", PROJECT_ROOT)
   mod_files_server("files", PROJECT_ROOT)

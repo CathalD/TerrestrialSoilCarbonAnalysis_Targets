@@ -12,8 +12,9 @@ mod_raster_ui <- function(id) {
     bslib::card(
       bslib::card_header("Strata Boundary — required for area-weighted carbon totals"),
       bslib::card_body(
-        p("Upload a GeoJSON file where each polygon (or multi-polygon) represents one stratum. ",
-          "The file must have a column that identifies which stratum each polygon belongs to."),
+        p("Upload a GeoJSON (or GPKG) where each polygon represents one stratum. ",
+          "The app will automatically find the column whose values match the stratum codes ",
+          "you entered in Step 1."),
 
         checkboxInput(ns("skip_strata"),
           "Skip — report carbon density (kg C/m²) only, without area-weighted totals",
@@ -26,9 +27,8 @@ mod_raster_ui <- function(id) {
               accept      = c(".geojson", ".json", ".gpkg", ".zip"),
               buttonLabel = "Upload strata file",
               placeholder = "site_strata.geojson"),
-            uiOutput(ns("strata_field_ui")),
-            uiOutput(ns("strata_area_ui")),
-            uiOutput(ns("strata_status"))
+            uiOutput(ns("detection_status")),
+            uiOutput(ns("strata_area_ui"))
           )
         )
       )
@@ -66,19 +66,38 @@ mod_raster_ui <- function(id) {
   )
 }
 
-mod_raster_server <- function(id, project_root) {
+# ── Helper: find which GeoJSON column best matches the valid strata ───────────
+# Returns a list of results sorted by match quality (best first).
+# Each element: list(col, vals, n_match, n_vals)
+detect_stratum_field <- function(sf_obj, valid_strata) {
+  geom_col <- attr(sf_obj, "sf_column") %||% "geometry"
+  cols <- setdiff(names(sf_obj), geom_col)
+  if (length(cols) == 0 || length(valid_strata) == 0) return(list())
+
+  results <- lapply(cols, function(col) {
+    vals    <- unique(as.character(sf_obj[[col]]))
+    n_match <- length(intersect(valid_strata, vals))
+    list(col = col, vals = vals, n_match = n_match, n_vals = length(vals))
+  })
+
+  # Best = most strata matched; among ties, fewer unique values preferred
+  ord <- order(
+    -vapply(results, `[[`, integer(1), "n_match"),
+     vapply(results, `[[`, integer(1), "n_vals")
+  )
+  results[ord]
+}
+
+mod_raster_server <- function(id, project_root, setup_state) {
   moduleServer(id, function(input, output, session) {
 
-    raster_info  <- reactiveVal(NULL)
-    strata_sf_rv <- reactiveVal(NULL)
+    raster_info   <- reactiveVal(NULL)
+    strata_sf_rv  <- reactiveVal(NULL)
+    detected_field <- reactiveVal(NULL)  # column name that matched
 
-    # ── Read GeoJSON when uploaded ───────────────────────────────────────────
+    # ── Read GeoJSON on upload ───────────────────────────────────────────────
     observeEvent(input$strata_file, {
       req(input$strata_file)
-      if (!requireNamespace("sf", quietly = TRUE)) {
-        strata_sf_rv(NULL)
-        return()
-      }
       result <- tryCatch(
         sf::st_read(input$strata_file$datapath, quiet = TRUE),
         error = function(e) NULL
@@ -86,41 +105,119 @@ mod_raster_server <- function(id, project_root) {
       strata_sf_rv(result)
     })
 
-    # ── Stratum field selector ───────────────────────────────────────────────
-    output$strata_field_ui <- renderUI({
+    # ── Auto-detect stratum field whenever file or valid_strata changes ──────
+    observeEvent(list(strata_sf_rv(), setup_state()$valid_strata), {
+      sf_obj        <- strata_sf_rv()
+      valid_strata  <- setup_state()$valid_strata
+
+      if (is.null(sf_obj) || length(valid_strata) == 0) {
+        detected_field(NULL)
+        return()
+      }
+
+      results <- detect_stratum_field(sf_obj, valid_strata)
+      if (length(results) > 0 && results[[1]]$n_match > 0) {
+        detected_field(results[[1]]$col)
+      } else {
+        detected_field(NULL)
+      }
+    }, ignoreNULL = FALSE)
+
+    # ── Detection status card ────────────────────────────────────────────────
+    output$detection_status <- renderUI({
+      # No file yet
+      if (is.null(input$strata_file)) return(NULL)
+
       sf_obj <- strata_sf_rv()
-      if (is.null(sf_obj)) return(NULL)
-      geom_col <- attr(sf_obj, "sf_column") %||% "geometry"
-      cols <- setdiff(names(sf_obj), geom_col)
-      if (length(cols) == 0) return(helpText("No attribute columns found in this file."))
-      best_guess <- cols[cols %in% c("stratum", "Stratum", "STRATUM",
-                                      "class", "Class", "CLASS",
-                                      "landuse", "land_use", "LandUse",
-                                      "type", "Type", "TYPE")][1]
-      selectInput(session$ns("stratum_field"),
-        "Which column identifies the strata?",
-        choices  = cols,
-        selected = if (!is.na(best_guess)) best_guess else cols[1])
+
+      # File could not be read
+      if (is.null(sf_obj)) {
+        return(div(class = "alert alert-danger mt-2",
+          tags$strong("❌ Could not read file."),
+          " Make sure it is a valid GeoJSON or GPKG."))
+      }
+
+      valid_strata <- setup_state()$valid_strata
+
+      # Step 1 not finished
+      if (length(valid_strata) == 0) {
+        return(div(class = "alert alert-warning mt-2",
+          "No stratum codes defined yet. Go back to Step 1 and enter your strata codes first."))
+      }
+
+      results <- detect_stratum_field(sf_obj, valid_strata)
+
+      # No attribute columns at all
+      if (length(results) == 0) {
+        return(div(class = "alert alert-danger mt-2",
+          tags$strong("❌ No attribute columns found in this file."),
+          " The GeoJSON must have at least one property column that identifies the stratum."))
+      }
+
+      best <- results[[1]]
+
+      if (best$n_match == length(valid_strata)) {
+        # Perfect match
+        div(class = "alert alert-success mt-2",
+          paste0("✓ All ", length(valid_strata), " strata found in column '",
+                 best$col, "'."))
+
+      } else if (best$n_match > 0) {
+        # Partial match
+        missing_strata <- setdiff(valid_strata, best$vals)
+        div(class = "alert alert-warning mt-2",
+          tags$strong(paste0("⚠ Partial match — column '", best$col, "'")),
+          tags$p(class = "mb-1 mt-1",
+            paste0(best$n_match, " of ", length(valid_strata),
+                   " strata found. Not found in GeoJSON: "),
+            tags$code(paste(missing_strata, collapse = ", ")),
+            "."),
+          tags$p(class = "mb-0 small text-muted",
+            "These strata will not have area-weighted carbon stock totals.")
+        )
+
+      } else {
+        # No match — show what we looked for and what each column contains
+        col_rows <- lapply(results[seq_len(min(4L, length(results)))], function(r) {
+          shown <- head(r$vals, 6)
+          extra <- if (length(r$vals) > 6) paste0(" … +", length(r$vals) - 6, " more") else ""
+          tags$li(
+            tags$code(r$col), ": ",
+            paste(shown, collapse = ", "), extra
+          )
+        })
+
+        div(class = "alert alert-danger mt-2",
+          tags$strong("❌ Could not detect stratum column."),
+          tags$p(class = "mb-1 mt-2",
+            "Looking for stratum codes: ",
+            tags$code(paste(valid_strata, collapse = ", "))),
+          tags$p(class = "mb-1",
+            "Values found in GeoJSON columns:"),
+          tags$ul(class = "mb-1", col_rows),
+          tags$p(class = "mb-0 small text-muted",
+            "Check that the stratum codes in Step 1 exactly match the values ",
+            "in one of the GeoJSON columns (case-sensitive).")
+        )
+      }
     })
 
-    # ── Area preview table ───────────────────────────────────────────────────
+    # ── Area table ───────────────────────────────────────────────────────────
     output$strata_area_ui <- renderUI({
       sf_obj <- strata_sf_rv()
-      field  <- input$stratum_field
-      if (is.null(sf_obj) || is.null(field) || nchar(trimws(field)) == 0) return(NULL)
-      if (!(field %in% names(sf_obj))) return(NULL)
+      field  <- detected_field()
+      if (is.null(sf_obj) || is.null(field)) return(NULL)
 
       area_df <- tryCatch({
         sf_obj$area_m2 <- as.numeric(sf::st_area(sf_obj))
-        df <- as.data.frame(sf_obj)
-        df <- df[, c(field, "area_m2")]
+        df <- as.data.frame(sf_obj)[, c(field, "area_m2")]
         names(df)[1] <- "stratum"
         df <- aggregate(area_m2 ~ stratum, data = df, FUN = sum)
         df$area_ha <- round(df$area_m2 / 10000, 2)
         df[order(df$stratum), c("stratum", "area_ha")]
       }, error = function(e) NULL)
 
-      if (is.null(area_df)) return(NULL)
+      if (is.null(area_df) || nrow(area_df) == 0) return(NULL)
 
       rows <- lapply(seq_len(nrow(area_df)), function(i) {
         tags$tr(
@@ -145,21 +242,6 @@ mod_raster_server <- function(id, project_root) {
           )
         )
       )
-    })
-
-    # ── Upload status ────────────────────────────────────────────────────────
-    output$strata_status <- renderUI({
-      if (is.null(input$strata_file)) return(NULL)
-      sf_obj <- strata_sf_rv()
-      if (is.null(sf_obj)) {
-        div(class = "alert alert-danger mt-2",
-          tags$strong("❌ Could not read file."),
-          " Make sure it is a valid GeoJSON, GPKG, or zipped shapefile.")
-      } else {
-        div(class = "alert alert-success mt-2",
-          paste0("✓ ", input$strata_file$name, " — ",
-                 nrow(sf_obj), " feature(s) loaded."))
-      }
     })
 
     # ── Raster validation ────────────────────────────────────────────────────
@@ -234,18 +316,17 @@ mod_raster_server <- function(id, project_root) {
 
       skip_strata <- isTRUE(input$skip_strata)
       sf_obj      <- strata_sf_rv()
-      field       <- input$stratum_field %||% ""
+      field       <- detected_field()
       aoi_source  <- if (!skip_strata && !is.null(input$strata_file)) input$strata_file$datapath else NULL
       aoi_dest    <- if (!is.null(aoi_source)) {
         file.path(project_root, "Pre-Analysis Data Preparation", "data_raw", "aoi_boundary.geojson")
       } else NULL
 
       strata_info <- NULL
-      if (!skip_strata && !is.null(sf_obj) && nchar(field) > 0 && field %in% names(sf_obj)) {
+      if (!skip_strata && !is.null(sf_obj) && !is.null(field)) {
         area_df <- tryCatch({
           sf_obj$area_m2 <- as.numeric(sf::st_area(sf_obj))
-          df <- as.data.frame(sf_obj)
-          df <- df[, c(field, "area_m2")]
+          df <- as.data.frame(sf_obj)[, c(field, "area_m2")]
           names(df)[1] <- "stratum"
           df <- aggregate(area_m2 ~ stratum, data = df, FUN = sum)
           df$area_ha <- round(df$area_m2 / 10000, 2)
