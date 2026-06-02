@@ -19,7 +19,10 @@ Standard depth intervals:
 
 ## Step 1 — Configure the project
 
-Edit `soil_carbon_config.R` in the project root:
+`soil_carbon_config.R` is your working configuration. It is created automatically
+from the tracked template `soil_carbon_config.example.R` the first time you open
+the project, and is gitignored — so your edits never conflict with `git pull`.
+Edit your copy in the project root:
 
 ```r
 PROJECT_NAME    <- "MySite_2025"
