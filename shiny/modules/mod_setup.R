@@ -31,23 +31,21 @@ mod_setup_ui <- function(id) {
         p("Enter the ecosystem codes used in your ", code("core_locations.csv"),
           " stratum column, separated by commas."),
         textInput(ns("valid_strata"), "Stratum codes *",
-          value = "F, GL, CL",
-          placeholder = "e.g. F, GL, CL"),
+          value = "0_5, 5_10, 10_15, 15_20, Remnant",
+          placeholder = "e.g. 0_5, 5_10, 10_15, 15_20, Remnant"),
         div(class = "strata-legend",
           tags$table(class = "table table-sm table-borderless mb-0",
             tags$tbody(
               tags$tr(
-                tags$td(tags$strong("F")),  tags$td("Forest — mineral or organic forest soil")),
+                tags$td(tags$strong("0_5")),     tags$td("0–5 years since restoration")),
               tags$tr(
-                tags$td(tags$strong("GL")), tags$td("Grassland — native or improved pasture")),
+                tags$td(tags$strong("5_10")),    tags$td("5–10 years since restoration")),
               tags$tr(
-                tags$td(tags$strong("CL")), tags$td("Cropland — tilled agricultural soil")),
+                tags$td(tags$strong("10_15")),   tags$td("10–15 years since restoration")),
               tags$tr(
-                tags$td(tags$strong("PL")), tags$td("Peatland — organic/peat-dominated soil")),
+                tags$td(tags$strong("15_20")),   tags$td("15–20 years since restoration")),
               tags$tr(
-                tags$td(tags$strong("SL")), tags$td("Shrubland — woody shrubs / transitional")),
-              tags$tr(
-                tags$td(tags$strong("WL")), tags$td("Wetland — inland freshwater or riparian"))
+                tags$td(tags$strong("Remnant")), tags$td("Never-tilled remnant prairie (reference)"))
             )
           )
         )

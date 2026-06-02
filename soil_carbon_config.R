@@ -4,10 +4,10 @@
 # ============================================================================
 
 # ── Project metadata ──────────────────────────────────────────────────────────
-PROJECT_NAME     <- "OntarioRestoration_Chronosequence_2026"
+PROJECT_NAME     <- "Alderville_RestorationChronosequence_2026"
 PROJECT_SCENARIO <- "PROJECT"   # BASELINE | PROJECT | CONTROL | DEGRADED
 MONITORING_YEAR  <- 2026
-PROJECT_LOCATION <- "Southern Ontario, Canada (PEM / BOS sites)"
+PROJECT_LOCATION <- "Alderville First Nation, Ontario, Canada (Pemadash / BOS prairie restoration)"
 
 # ── Google Earth Engine ───────────────────────────────────────────────────────
 GEE_PROJECT <- "north-star-project-470316"
@@ -22,22 +22,24 @@ COVARIATES_DIR   <- file.path(PRE_ANALYSIS_DIR, "covariates")
 COVARIATE_RASTER <- file.path(COVARIATES_DIR, "TerrestrialSOC_Covariate_Snapshot_25m_2020_2023.tif")
 
 # Area of Interest boundary (GeoJSON, shapefile, or GPKG)
-AOI_FILE <- file.path(DATA_RAW_DIR, "aoi_boundary.geojson")
+AOI_FILE <- file.path(DATA_RAW_DIR, "Alderville_Restoration.geojson")
 
 # Column in AOI_FILE that identifies land-use strata.
 # Set to NULL for a whole-site total (no per-stratum area breakdown).
-AOI_STRATUM_FIELD <- NULL  # e.g. "landuse_class"
+AOI_STRATUM_FIELD <- "Restoratio"  # restoration-age class attribute in the AOI polygons
 
-# ── Land-use strata ───────────────────────────────────────────────────────────
-# Restoration chronosequence: strata = years since restoration began.
-# Codes must match the `stratum` column in core_locations.csv exactly.
-VALID_STRATA <- c("yr00_05", "yr05_10", "yr10_15", "yr15_20")
+# ── Restoration-age strata ────────────────────────────────────────────────────
+# Strata = years since prairie restoration began, taken from the AOI polygon
+# attribute `Restoratio` (see AOI_STRATUM_FIELD). Codes must match the `stratum`
+# column in core_locations.csv exactly — and the geojson, which cannot be renamed.
+VALID_STRATA <- c("0_5", "5_10", "10_15", "15_20", "Remnant")
 
 STRATUM_COLORS <- c(
-  "yr00_05" = "#d4edda",   # 0–5 yrs — very light green (young)
-  "yr05_10" = "#74c493",   # 5–10 yrs
-  "yr10_15" = "#2d9e6b",   # 10–15 yrs
-  "yr15_20" = "#1a5e3a"    # 15–20 yrs — dark green (established)
+  "0_5"     = "#d4edda",   # 0–5 yrs — very light green (recently restored)
+  "5_10"    = "#92d6a8",   # 5–10 yrs
+  "10_15"   = "#41a06b",   # 10–15 yrs
+  "15_20"   = "#1a5e3a",   # 15–20 yrs — dark green (established)
+  "Remnant" = "#8c6d31"    # never-tilled remnant prairie (reference)
 )
 
 # ── Standard depth intervals ──────────────────────────────────────────────────
@@ -56,13 +58,14 @@ DEPTH_INTERVALS <- data.frame(
 
 # ── Bulk density defaults ─────────────────────────────────────────────────────
 # Applied where bulk_density_g_cm3 is missing in the sample data (g/cm³).
-# Literature values for Canadian terrestrial ecosystems (Gregorich et al. 1994;
-# Jandl et al. 2014). Update for your specific ecosystem type.
+# Restored prairie mineral soils: bulk density declines as restoration age and
+# organic-matter inputs increase (Gregorich et al. 1994; Jandl et al. 2014).
 BD_DEFAULTS <- list(
-  "yr00_05" = 1.20,   # Recently restored ex-cropland — still compacted
-  "yr05_10" = 1.10,   # Early recovery — some aggregate formation
-  "yr10_15" = 1.00,   # Mid-recovery — improving structure and OM
-  "yr15_20" = 0.90    # Well-established — lower BD from root inputs
+  "0_5"     = 1.30,   # Recently restored ex-cropland — still compacted
+  "5_10"    = 1.20,   # Early recovery — some aggregate formation
+  "10_15"   = 1.12,   # Mid-recovery — improving structure and OM
+  "15_20"   = 1.05,   # Well-established — lower BD from root inputs
+  "Remnant" = 0.95    # Never-tilled remnant prairie — lowest BD
 )
 
 # ── QC thresholds ─────────────────────────────────────────────────────────────
