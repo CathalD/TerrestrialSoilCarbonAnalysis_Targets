@@ -21,6 +21,23 @@ Run order: Pipeline 1 → (optional) Pipeline 2 → Pipeline 3 → Pipelines 4 a
 
 ---
 
+## Output files
+
+Each pipeline writes its raw figures, tables, and rasters under `outputs/`,
+organized by report heading, so partners can grab them without rendering a report:
+
+| Folder | Contents |
+|--------|----------|
+| `outputs/non-spatial/figures/` | EDA + harmonized stock plots and thematic stock maps (PNG) |
+| `outputs/non-spatial/tables/`  | Per-stratum and per-depth stock summaries (CSV) |
+| `outputs/rf/`                  | RF prediction rasters (GeoTIFF) |
+| `outputs/transfer/`            | Wadoux TL prediction rasters (GeoTIFF) |
+| `outputs/embedding/`           | Embedding TL prediction rasters (GeoTIFF) |
+
+`outputs/` is gitignored — the files are regenerated on every run.
+
+---
+
 ## Carbon stock formula
 
 ```
