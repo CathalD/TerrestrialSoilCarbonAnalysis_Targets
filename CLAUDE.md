@@ -8,9 +8,9 @@ Spatial prediction of soil organic carbon (SOC) stocks in terrestrial ecosystems
 The pipeline takes field soil cores → harmonizes depths → extracts remote sensing
 covariates globally and locally → predicts stocks across a full site raster →
 reports uncertainty at 90% confidence (currently implemented for the
-transfer-learning tiers; see the status notes below).
+transfer-learning pipelines; see the status notes below).
 
-Depth reporting aligns with IPCC Tier 2 standards: 0–30 cm (topsoil) and
+Depth reporting uses two standard aggregates: 0–30 cm (topsoil) and
 0–100 cm (full mineral profile).
 
 ---
@@ -186,15 +186,15 @@ Carbon stock formula:
   carbon_stock_kg_m2 = SOC(g/kg) × BD(g/cm³) × thickness(cm) / 100
 
 Standard aggregates:
-  0–30 cm  = sum of depth intervals 1 + 2  (IPCC Tier 2 topsoil)
-  0–100 cm = sum of all 4 depth intervals   (IPCC full profile)
+  0–30 cm  = sum of depth intervals 1 + 2  (topsoil)
+  0–100 cm = sum of all 4 depth intervals   (full profile)
 
 Uncertainty target: 90% prediction intervals (conservative reporting bound).
   STATUS — currently produced only as a manual post-hoc calc for the
-  transfer-learning tiers (see PIPELINE.md). The non-spatial and RF spatial
-  tiers report point estimates only; design-based / QRF intervals are next.
-CV strategy: leave-one-CORE-out for the transfer-learning tiers. The RF spatial
-  tier currently uses an 80/20 holdout (n >= 10) or OOB error (n < 10), NOT LOCO.
+  transfer-learning pipelines (see PIPELINE.md). The non-spatial and RF spatial
+  pipelines report point estimates only; design-based / QRF intervals are next.
+CV strategy: leave-one-CORE-out for the transfer-learning pipelines. The RF spatial
+  pipeline currently uses an 80/20 holdout (n >= 10) or OOB error (n < 10), NOT LOCO.
 ```
 
 Always read from `cfg$DEPTH_MIDPOINTS` — never hardcode.

@@ -1,7 +1,7 @@
 # Terrestrial Soil Carbon Analysis
 
 R workflow for estimating soil organic carbon (SOC) stocks in forest and grassland
-ecosystems. Built for use with Canadian field data and IPCC Tier 2 depth reporting
+ecosystems. Built for use with Canadian field data and standard depth reporting
 (0–30 cm topsoil, 0–100 cm full mineral profile).
 
 A Shiny app guides you through data upload and configuration. A `targets` pipeline
@@ -93,13 +93,13 @@ for and what it found.
 `targets::tar_make()` generates `reports/step1_nonspatial.html` with:
 
 - SOC depth profiles for each core
-- Per-stratum carbon stock table at all four IPCC Tier 2 depth intervals
+- Per-stratum carbon stock table at all four standard depth intervals
 - Area-weighted total carbon stock per stratum (if a strata GeoJSON was uploaded)
 - Data quality flags: missing bulk density, depth extrapolation, strata with fewer than 3 cores
 
 ---
 
-## Depth intervals (IPCC Tier 2)
+## Depth intervals
 
 | Interval  | Midpoint | Thickness |
 |-----------|----------|-----------|
@@ -108,7 +108,7 @@ for and what it found.
 | 30–60 cm  | 45 cm    | 30 cm     |
 | 60–100 cm | 80 cm    | 40 cm     |
 
-0–30 cm sums to the IPCC topsoil pool; 0–100 cm is the full mineral profile.
+0–30 cm sums to the topsoil pool; 0–100 cm is the full mineral profile.
 
 ---
 

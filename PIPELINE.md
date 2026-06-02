@@ -27,7 +27,7 @@ Run order: Pipeline 1 → (optional) Pipeline 2 → Pipeline 3 → Pipelines 4 a
 carbon_stock (kg C/m²) = SOC (g/kg) × BD (g/cm³) × thickness (cm) / 100
 ```
 
-Where `thickness` is the IPCC Tier 2 interval thickness (15, 15, 30, or 40 cm).
+Where `thickness` is the depth-interval thickness (15, 15, 30, or 40 cm).
 Missing bulk density is filled from `BD_DEFAULTS` in `soil_carbon_config.R`
 using stratum-specific literature values for Canadian terrestrial ecosystems
 (Gregorich et al. 1994; Jandl et al. 2014).
@@ -37,7 +37,7 @@ using stratum-specific literature values for Canadian terrestrial ecosystems
 ## Depth harmonization
 
 Field cores are sampled at irregular intervals. The pipeline harmonizes to
-four IPCC Tier 2 standard intervals using a hybrid method:
+four standard intervals using a hybrid method:
 
 - **Interpolation** (within measured range): monotone Hermite spline (`monoH.FC`)
 - **Extrapolation** (below deepest sample): exponential decay where Spearman
@@ -46,7 +46,7 @@ four IPCC Tier 2 standard intervals using a hybrid method:
 
 Standard aggregates reported:
 
-| Aggregate | Intervals | IPCC context |
+| Aggregate | Intervals | Context |
 |-----------|-----------|--------------|
 | 0–30 cm   | 1 + 2     | Topsoil pool |
 | 0–100 cm  | 1 + 2 + 3 + 4 | Full mineral profile |
@@ -95,14 +95,14 @@ Band names follow the pattern `d{midpoint}_{suffix}` with `.` replaced by `_`
 
 ---
 
-## Uncertainty (transfer-learning tiers only)
+## Uncertainty (transfer-learning pipelines only)
 
 > **Status:** uncertainty is currently produced **only** for the transfer-learning
-> tiers, and only via the manual post-hoc calculation below. The non-spatial
-> (Steps 1–2) and RF spatial (Step 3) tiers report point estimates; design-based
-> and quantile-regression-forest intervals for those tiers are on the roadmap.
+> pipelines, and only via the manual post-hoc calculation below. The non-spatial
+> (Steps 1–2) and RF spatial (Step 3) pipelines report point estimates; design-based
+> and quantile-regression-forest intervals for those pipelines are on the roadmap.
 
-Uncertainty is reported at **90% confidence** (IPCC Tier 2 convention):
+Uncertainty is reported at **90% confidence**:
 
 ```r
 m   <- targets::tar_read("tl_models", store = "_targets_transfer")$models[["7.5"]]

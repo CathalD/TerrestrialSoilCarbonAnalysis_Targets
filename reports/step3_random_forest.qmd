@@ -44,7 +44,7 @@ where carbon is concentrated and to produce spatially-explicit total stock estim
 
 ### What good performance looks like
 
-IPCC Tier 2 reporting targets **≤ 20% relative error at 90% confidence**.
+A common accuracy target for spatial SOC predictions is **≤ 20% relative error at 90% confidence**.
 As a rough guide, this corresponds to:
 
 | Metric | Target | Acceptable |
@@ -54,7 +54,7 @@ As a rough guide, this corresponds to:
 | OOB error (when n < 10) | Not reliable — collect more cores | — |
 
 **Minimum recommended sample size:** ~30 cores per stratum for a model
-that meets IPCC Tier 2 precision. With fewer cores, the model is fitting
+that meets this precision. With fewer cores, the model is fitting
 the training data rather than learning a generalizable spatial pattern.
 Treat predictions as indicative until more cores are added.
 
@@ -93,7 +93,7 @@ if (nrow(rf_models$cv_metrics) == 0) {
   if (best_r2 < 0.6 || n_cores < 10) {
     cat(paste0(
       "> **Interpretation:** With ", n_cores, " core(s), the model does not yet meet ",
-      "IPCC Tier 2 precision targets. Current predictions show the spatial pattern of the ",
+      "this precision target. Current predictions show the spatial pattern of the ",
       "remote sensing covariates weighted by the limited core data — useful for ",
       "identifying priority sampling locations, but not yet suitable for carbon ",
       "stock reporting. **Aim for ≥ 30 cores per stratum.**\n"
@@ -101,7 +101,7 @@ if (nrow(rf_models$cv_metrics) == 0) {
   } else {
     cat(paste0(
       "> **Interpretation:** Model R² = ", round(best_r2, 2),
-      " — predictions are approaching IPCC Tier 2 precision targets.\n"
+      " — predictions are approaching the precision target.\n"
     ))
   }
 }
@@ -121,7 +121,7 @@ rf_importance_plot
 
 ### By depth interval
 
-```{r fig.cap="Predicted carbon stock (kg C/m²) at each IPCC depth interval (0–15, 15–30, 30–60, 60–100 cm).", fig.width=10, fig.height=8}
+```{r fig.cap="Predicted carbon stock (kg C/m²) at each depth interval (0–15, 15–30, 30–60, 60–100 cm).", fig.width=10, fig.height=8}
 rf_maps$depth_panel
 ```
 

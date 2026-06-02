@@ -21,7 +21,7 @@ shiny::runApp("shiny")
 
 
 # ── 1. NON-SPATIAL ANALYSIS (always run first, ~5–15 min) ────────────────────
-# Produces: per-stratum carbon stocks, depth profiles, IPCC Tier 2 estimates
+# Produces: per-stratum carbon stocks, depth profiles, stock estimates
 # Report:   reports/step1_nonspatial.html
 
 targets::tar_make()

@@ -43,7 +43,7 @@ STRATUM_COLORS <- c(
 )
 
 # ── Standard depth intervals ──────────────────────────────────────────────────
-# Four-depth scheme aligned with IPCC Tier 2 reporting (0–30 cm, 0–100 cm)
+# Four-depth scheme with standard aggregates (0–30 cm, 0–100 cm)
 # and the GlobalSoilMap specification.
 # Depths 1–2 aggregate to the standard 0–30 cm topsoil pool.
 # Depths 1–4 aggregate to the standard 0–100 cm full-profile pool.
@@ -83,7 +83,7 @@ QC_BD_MAX  <- 2.0    # g/cm³ — typical upper limit for mineral soils
 #   mineral soils (Guo et al. 2022; Hengl et al. 2017).
 #   SAR VV/VH captures soil roughness and residue cover (Paloscia et al. 2013).
 #   Climate (MAT, MAP, PET) and topography (TWI, slope) are primary drivers
-#   of SOC formation and decomposition rates (IPCC Tier 1 factors).
+#   of SOC formation and decomposition rates (primary climate factors).
 #   Clay content (SoilGrids prior) stabilises SOC through organo-mineral
 #   associations and is one of the strongest global SOC predictors (Jobbagy & Jackson 2000).
 BAND_LABELS <- c(

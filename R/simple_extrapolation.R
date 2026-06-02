@@ -84,3 +84,76 @@ simple_extrapolation <- function(stratum_summary, cfg) {
 
   per_stratum
 }
+
+# ── Thematic per-stratum stock map (no covariates needed) ─────────────────────
+# Simple spatial extrapolation: paint each AOI polygon with the mean carbon stock
+# of its stratum (averaged across that stratum's cores). Needs only the AOI
+# polygons + a stratum field — NO remote-sensing covariate raster.
+#
+# Assumes a uniform stock within each stratum polygon (the simplest possible
+# spatial model). Returns:
+#   list(topsoil = <ggplot|NULL>, full_profile = <ggplot|NULL>, data = <df>)
+map_strata_stocks <- function(stratum_summary, cfg) {
+  suppressPackageStartupMessages({ library(dplyr); library(ggplot2) })
+
+  di <- cfg$DEPTH_INTERVALS
+  topsoil_mids <- if (!is.null(di)) di$depth_midpoint[di$depth_bottom <= 30] else c(7.5, 22.5)
+
+  per_stratum <- stratum_summary |>
+    group_by(stratum) |>
+    summarise(
+      n_cores       = max(n_cores),
+      topsoil_kg_m2 = sum(mean_stock[depth_cm_midpoint %in% topsoil_mids], na.rm = TRUE),
+      full_kg_m2    = sum(mean_stock, na.rm = TRUE),
+      .groups = "drop"
+    ) |>
+    mutate(topsoil_MgC_ha = topsoil_kg_m2 * 10,
+           full_MgC_ha    = full_kg_m2 * 10)
+
+  aoi_path      <- cfg$AOI_FILE
+  stratum_field <- cfg$AOI_STRATUM_FIELD
+  no_map <- list(topsoil = NULL, full_profile = NULL, data = per_stratum)
+
+  if (is.null(aoi_path) || !file.exists(aoi_path) || is.null(stratum_field)) {
+    message("[step2-map] No AOI polygon + stratum field — skipping thematic map.")
+    return(no_map)
+  }
+
+  suppressPackageStartupMessages({ library(sf) })
+  aoi <- sf::st_read(aoi_path, quiet = TRUE)
+  if (!stratum_field %in% names(aoi)) {
+    warning(sprintf("[step2-map] stratum field '%s' not found in AOI; skipping map.", stratum_field))
+    return(no_map)
+  }
+
+  aoi_stock <- aoi |>
+    mutate(stratum = as.character(.data[[stratum_field]])) |>
+    left_join(per_stratum, by = "stratum")
+
+  # Label points (guarded — a labelling failure must not fail the target).
+  lab_sf <- tryCatch(suppressWarnings(sf::st_point_on_surface(aoi_stock)),
+                     error = function(e) NULL)
+
+  mk <- function(fill_col, title) {
+    g <- ggplot(aoi_stock) +
+      geom_sf(aes(fill = .data[[fill_col]]), colour = "grey25", linewidth = 0.2) +
+      scale_fill_viridis_c(name = "Mg C/ha", option = "D", na.value = "grey85") +
+      theme_bw(base_size = 11) +
+      theme(axis.text = element_blank(), axis.ticks = element_blank(),
+            panel.grid = element_blank()) +
+      labs(title = title,
+           subtitle = "Per-stratum mean across cores, extrapolated across the area of interest")
+    if (!is.null(lab_sf))
+      g <- g + geom_sf_text(data = lab_sf, aes(label = stratum),
+                            size = 2.6, colour = "white", fontface = "bold")
+    g
+  }
+
+  message(sprintf("[step2-map] Thematic map built: %d AOI polygons, %d strata.",
+                  nrow(aoi_stock), dplyr::n_distinct(aoi_stock$stratum)))
+  list(
+    topsoil      = mk("topsoil_MgC_ha", "Mean topsoil carbon stock (0–30 cm)"),
+    full_profile = mk("full_MgC_ha",    "Mean full-profile carbon stock (0–100 cm)"),
+    data         = per_stratum
+  )
+}

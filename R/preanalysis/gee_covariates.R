@@ -19,7 +19,7 @@
 #   predictors of SOC globally (Hengl et al. 2017; Guo et al. 2022).
 #   SAR VV/VH captures soil moisture and residue cover (Paloscia et al. 2013).
 #   PET and aridity index capture the water balance controlling decomposition
-#   rate (IPCC Tier 1 climate factor; FAO SOC Mapping Cookbook 2019).
+#   rate (a primary climate driver of SOC; FAO SOC Mapping Cookbook 2019).
 #   BSI and NDMI differentiate bare mineral soils from vegetated surfaces.
 # =============================================================================
 

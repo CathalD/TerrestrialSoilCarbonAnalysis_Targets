@@ -68,7 +68,7 @@ mod_guide_server <- function(id, project_root) {
           enabled     = s$setup_done,
           prereq_text = if (!s$setup_done) "Complete the Setup tab first.",
           description = paste0(
-            "Harmonizes field cores to IPCC Tier 2 standard depths, computes ",
+            "Harmonizes field cores to standard depths, computes ",
             "per-stratum carbon stocks, generates exploratory plots. ",
             "Produces: ", code_span("reports/step1_nonspatial.html")),
           code = "targets::tar_make()"

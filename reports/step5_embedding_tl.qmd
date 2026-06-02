@@ -192,6 +192,6 @@ upper <- p + z * se
 
 - Compare Step 4 and Step 5 spatial patterns — do they agree on high/low
   carbon zones, or diverge in specific land-use types?
-- If embeddings improve LOCO CV RMSE, adopt as primary method for IPCC Tier 2.
+- If embeddings improve LOCO CV RMSE, adopt as the primary method.
 - Consider Option 2 (cluster-based pixel-wise weights) if the AOI shows
   strong spatial heterogeneity in the embedding heatmap.
