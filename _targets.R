@@ -28,6 +28,7 @@ list(
 
   # ── STEP 2: SIMPLE EXTRAPOLATION ──────────────────────────────────────────
   tar_target(step2_extrapolation, simple_extrapolation(stratum_summary, cfg)),
+  tar_target(step2_strata_map,    map_strata_stocks(stratum_summary, cfg)),
 
   # ── REPORT ────────────────────────────────────────────────────────────────
   tar_quarto(report_nonspatial, path = "reports/step1_nonspatial.qmd")

@@ -4,9 +4,9 @@
 
 Takes field soil core data → harmonizes depths → extracts remote sensing covariates
 → predicts soil organic carbon (SOC) stocks spatially → estimates 90% uncertainty
-(transfer-learning tiers; the non-spatial and RF tiers currently report point estimates).
+(transfer-learning pipelines; the non-spatial and RF pipelines currently report point estimates).
 
-Depth intervals follow IPCC Tier 2 standards:
+Standard depth intervals:
 
 | Interval | Midpoint | Thickness |
 |----------|----------|-----------|

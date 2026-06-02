@@ -7,7 +7,7 @@
 #
 # DEFAULT DEPTHS (midpoints): 7.5, 22.5, 45, 80 cm
 # LAYER THICKNESSES:           15,   15, 30, 40 cm
-# — aggregates to 0–30 cm (IPCC topsoil) and 0–100 cm (full profile)
+# — aggregates to 0–30 cm (topsoil) and 0–100 cm (full profile)
 #
 # Depths are read from cfg$DEPTH_MIDPOINTS / cfg$DEPTH_INTERVALS.
 #

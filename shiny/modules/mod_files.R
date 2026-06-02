@@ -123,7 +123,7 @@ mod_files_server <- function(id, project_root) {
               ),
               tags$tbody(
                 raster_dir_row(project_root, "outputs/rf",
-                  "RF prediction maps — one band per IPCC Tier 2 depth interval + total"),
+                  "RF prediction maps — one band per depth interval + total"),
                 raster_dir_row(project_root, "outputs/transfer",
                   "Wadoux TL maps — Global Prior, Transfer Final, Local Only, Difference"),
                 raster_dir_row(project_root, "outputs/embedding",

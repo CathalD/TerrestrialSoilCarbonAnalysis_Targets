@@ -87,7 +87,7 @@ write_config <- function(
     paste0("STRATUM_COLORS <- ", colors_str),
     "",
     "# ── Standard depth intervals ─────────────────────────────────────",
-    "# 4-depth scheme: sums to 0-30 cm (IPCC topsoil) and 0-100 cm (full profile).",
+    "# 4-depth scheme: sums to 0-30 cm (topsoil) and 0-100 cm (full profile).",
     "DEPTH_MIDPOINTS <- c(7.5, 22.5, 45, 80)",
     "",
     "DEPTH_INTERVALS <- data.frame(",

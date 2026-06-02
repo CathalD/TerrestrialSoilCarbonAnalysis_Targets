@@ -14,8 +14,8 @@ mod_results_ui <- function(id) {
           tabPanel("Stratum Summary",
             div(class = "p-3",
               p(class = "text-muted",
-                "Mean carbon stock (kg C/m²) at each IPCC Tier 2 depth interval, ",
-                "grouped by ecosystem stratum. These are the core IPCC Tier 2 reporting values."),
+                "Mean carbon stock (kg C/m²) at each depth interval, ",
+                "grouped by ecosystem stratum. These are the primary reporting values."),
               DT::dataTableOutput(ns("summary_table"))
             )
           ),
@@ -98,7 +98,7 @@ mod_results_server <- function(id, project_root) {
       req(!is.null(df))
 
       DT::datatable(df,
-        caption  = "Carbon stock (kg C/m²) by stratum and IPCC Tier 2 depth interval",
+        caption  = "Carbon stock (kg C/m²) by stratum and depth interval",
         options  = list(pageLength = 20, dom = "t"),
         rownames = FALSE
       ) |>

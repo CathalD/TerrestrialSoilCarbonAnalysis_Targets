@@ -55,7 +55,7 @@ mod_finish_server <- function(id, setup_state, data_state, raster_state, project
           warnings <- c(warnings, paste0(
             "Stratum ‘", s, "’ has only ", n,
             if (n == 1) " core" else " cores",
-            " — IPCC Tier 2 recommends ≥ 3 for a reliable stock estimate. ",
+            " — at least 3 cores per stratum is recommended for a reliable stock estimate. ",
             "Consider collecting more samples."
           ))
         }
@@ -122,8 +122,8 @@ mod_finish_server <- function(id, setup_state, data_state, raster_state, project
             badge    = "Always included",
             badge_cls = "bg-success",
             items    = c(
-              "Depth harmonization to IPCC Tier 2 standard intervals (0–15, 15–30, 30–60, 60–100 cm)",
-              "Per-stratum carbon stock table (kg C/m²) — IPCC Tier 2 reporting values",
+              "Depth harmonization to standard intervals (0–15, 15–30, 30–60, 60–100 cm)",
+              "Per-stratum carbon stock table (kg C/m²) — primary reporting values",
               "Exploratory plots: depth profiles, core location map, stock distributions",
               "HTML report: reports/step1_nonspatial.html"
             )
