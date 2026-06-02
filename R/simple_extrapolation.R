@@ -137,23 +137,25 @@ map_strata_stocks <- function(stratum_summary, cfg) {
   mk <- function(fill_col, title) {
     g <- ggplot(aoi_stock) +
       geom_sf(aes(fill = .data[[fill_col]]), colour = "grey25", linewidth = 0.2) +
-      scale_fill_viridis_c(name = "Mg C/ha", option = "D", na.value = "grey85") +
+      scale_fill_gradient(name = "kg C/m²", low = "#f6e0c5", high = "#7f3b08",
+                          na.value = "grey85") +
       theme_bw(base_size = 11) +
-      theme(axis.text = element_blank(), axis.ticks = element_blank(),
-            panel.grid = element_blank()) +
+      theme(axis.title = element_blank(), axis.text = element_blank(),
+            axis.ticks = element_blank(), panel.grid = element_blank()) +
       labs(title = title,
            subtitle = "Per-stratum mean across cores, extrapolated across the area of interest")
     if (!is.null(lab_sf))
-      g <- g + geom_sf_text(data = lab_sf, aes(label = stratum),
-                            size = 2.6, colour = "white", fontface = "bold")
+      g <- g + geom_sf_label(data = lab_sf, aes(label = stratum), size = 2.4,
+                             colour = "grey10", fill = "white", alpha = 0.7,
+                             label.size = 0)
     g
   }
 
   message(sprintf("[step2-map] Thematic map built: %d AOI polygons, %d strata.",
                   nrow(aoi_stock), dplyr::n_distinct(aoi_stock$stratum)))
   list(
-    topsoil      = mk("topsoil_MgC_ha", "Mean topsoil carbon stock (0–30 cm)"),
-    full_profile = mk("full_MgC_ha",    "Mean full-profile carbon stock (0–100 cm)"),
+    topsoil      = mk("topsoil_kg_m2", "Mean topsoil carbon stock (0–30 cm)"),
+    full_profile = mk("full_kg_m2",    "Mean full-profile carbon stock (0–100 cm)"),
     data         = per_stratum
   )
 }

@@ -28,6 +28,7 @@ eda_plots           <- tar_read(eda_plots)
 stratum_summary     <- tar_read(stratum_summary)
 step2_extrapolation <- tar_read(step2_extrapolation)
 step2_strata_map    <- tar_read(step2_strata_map)
+harmonized_eda      <- tar_read(harmonized_eda)
 ```
 
 ## Project overview
@@ -91,6 +92,20 @@ stratum_summary |>
   kable(caption = "Harmonized carbon stocks at the standard depth intervals.")
 ```
 
+## Harmonized carbon stocks
+
+The same views as the raw data above, now computed from the depth-harmonized
+profiles — same colours and style, so they can be reported alongside the raw
+figures.
+
+```{r fig.cap="Harmonized carbon stock by depth. Each line is one core, faceted by stratum.", fig.width=8, fig.height=5}
+harmonized_eda$depth_profiles
+```
+
+```{r fig.cap="Total harmonized carbon stock (0–100 cm) per core, by stratum.", fig.width=8, fig.height=5}
+harmonized_eda$carbon_stocks
+```
+
 ## Step 2 — Simple extrapolation
 
 Per-stratum carbon **density** (kg C/m² and Mg C/ha), summed across the
@@ -124,6 +139,12 @@ if (is.null(m$full_profile)) {
   print(m$full_profile)
 }
 ```
+
+## Saved output files
+
+Every figure and table in this report is also written to `outputs/non-spatial/`
+(`figures/` as PNG, `tables/` as CSV) each time the pipeline runs, so partners
+can reuse them directly without rendering the report.
 
 ---
 
