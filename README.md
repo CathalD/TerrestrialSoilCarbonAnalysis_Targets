@@ -58,6 +58,10 @@ The app walks through four steps:
 
 After saving, switch to the **Run** tab for the pipeline commands.
 
+> **Your config is yours.** `soil_carbon_config.R` is created from
+> `soil_carbon_config.example.R` on first open and is gitignored, so your
+> settings are never overwritten by `git pull`.
+
 ---
 
 ## Data format

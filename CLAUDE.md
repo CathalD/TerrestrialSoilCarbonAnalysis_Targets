@@ -39,7 +39,8 @@ TerrestrialSoilCarbonAnalysis_Targets/   # repository / RStudio project root
 ├── _targets_preanalysis.R        # Pre-analysis: global GEE covariate extraction
 ├── _targets_embedding.R          # Embedding TL pipeline (Step 5 — Model 2)
 ├── _targets.yaml                 # Named configs: main / transfer / preanalysis / embedding
-├── soil_carbon_config.R          # Site-specific settings (edit per project)
+├── soil_carbon_config.example.R  # Tracked config template (copied on first run)
+├── soil_carbon_config.R          # Working config — gitignored (edit per project)
 ├── R/                            # One .R file per analysis step
 │   ├── config.R                  # load_config() — wraps soil_carbon_config.R
 │   ├── data_prep.R               # load_raw_data()
