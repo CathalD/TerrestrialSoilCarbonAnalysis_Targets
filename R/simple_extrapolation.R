@@ -130,13 +130,23 @@ map_strata_stocks <- function(stratum_summary, cfg) {
     mutate(stratum = as.character(.data[[stratum_field]])) |>
     left_join(per_stratum, by = "stratum")
 
-  # Label points (guarded — a labelling failure must not fail the target).
-  lab_sf <- tryCatch(suppressWarnings(sf::st_point_on_surface(aoi_stock)),
-                     error = function(e) NULL)
+  # Reproject to a local UTM zone so geometry is planar — keeps label placement
+  # accurate and avoids the "st_point_on_surface ... longitude/latitude" warning.
+  aoi_stock <- tryCatch({
+    if (!is.na(sf::st_crs(aoi_stock)) && isTRUE(sf::st_is_longlat(aoi_stock))) {
+      bb    <- sf::st_bbox(aoi_stock)
+      lon_c <- as.numeric((bb["xmin"] + bb["xmax"]) / 2)
+      lat_c <- as.numeric((bb["ymin"] + bb["ymax"]) / 2)
+      epsg  <- (if (lat_c >= 0) 32600 else 32700) + floor((lon_c + 180) / 6) + 1
+      sf::st_transform(aoi_stock, epsg)
+    } else aoi_stock
+  }, error = function(e) aoi_stock)
 
   mk <- function(fill_col, title) {
-    g <- ggplot(aoi_stock) +
+    ggplot(aoi_stock) +
       geom_sf(aes(fill = .data[[fill_col]]), colour = "grey25", linewidth = 0.2) +
+      geom_sf_label(aes(label = stratum), size = 2.4, colour = "grey10",
+                    fill = "white", alpha = 0.7, linewidth = 0) +
       scale_fill_gradient(name = "kg C/m²", low = "#f6e0c5", high = "#7f3b08",
                           na.value = "grey85") +
       theme_bw(base_size = 11) +
@@ -144,11 +154,6 @@ map_strata_stocks <- function(stratum_summary, cfg) {
             axis.ticks = element_blank(), panel.grid = element_blank()) +
       labs(title = title,
            subtitle = "Per-stratum mean across cores, extrapolated across the area of interest")
-    if (!is.null(lab_sf))
-      g <- g + geom_sf_label(data = lab_sf, aes(label = stratum), size = 2.4,
-                             colour = "grey10", fill = "white", alpha = 0.7,
-                             label.size = 0)
-    g
   }
 
   message(sprintf("[step2-map] Thematic map built: %d AOI polygons, %d strata.",
