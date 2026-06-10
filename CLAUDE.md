@@ -213,6 +213,9 @@ cfg$VALID_STRATA             # user-defined codes (bundled config: restoration a
 cfg$COVARIATE_RASTER         # path to local GEE raster (28-band)
 cfg$DATA_GLOBAL_DIR          # "Pre-Analysis Data Preparation/data_global"
 cfg$BAND_LABELS              # named vector: raster band name → human-readable label
+cfg$PROFILE_TYPE             # "mineral" (decay extrapolation) | "organic" (peat, constant)
+cfg$MAX_EXTRAP_FACTOR        # cap on extrapolation depth (× deepest sample); default 2.5
+cfg$OM_TO_C_FACTOR           # if cores report organic-matter %, C = OM% × 10 × factor
 ```
 
 ---

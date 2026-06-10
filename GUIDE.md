@@ -50,6 +50,13 @@ COVARIATE_RASTER <- "Pre-Analysis Data Preparation/covariates/your_raster.tif"
 
 Add or adjust these in the `BD_DEFAULTS` list in `soil_carbon_config.R`.
 
+**Peatlands / other biomes.** For organic (peat) soils, start from
+`soil_carbon_config.HBL.example.R` (`cp soil_carbon_config.HBL.example.R soil_carbon_config.R`):
+it uses land-cover strata, ~10× lower peat bulk densities, a deeper depth scheme
+(to 200 cm), `PROFILE_TYPE = "organic"` (constant-with-depth extrapolation instead
+of mineral-soil decay), and accepts loss-on-ignition input via `OM_TO_C_FACTOR`
+(`soc_g_kg = organic_matter_% × 10 × OM_TO_C_FACTOR`).
+
 ---
 
 ## Step 2 — Prepare your field data
