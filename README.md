@@ -118,19 +118,20 @@ for and what it found.
 
 ## Test data
 
-Example data for the Alderville (Ontario) prairie **restoration chronosequence**
-is in `Pre-Analysis Data Preparation/data_raw/`:
+Example data for a James Bay Lowlands (Ontario) **land-cover** soil-carbon
+assessment is in `Pre-Analysis Data Preparation/data_raw/`:
 
-- `core_locations.csv` — 38 sampling sites (14 high-res + 24 composite); each
-  site's stratum is assigned by spatial join into the AOI restoration-age polygons
-- `core_samples.csv` — 376 depth samples. **Note:** the SOC and bulk-density
-  values are SYNTHETIC — the sampling design carries no lab measurements, so these
-  are mock profiles for demoing the pipeline only, **not for reporting**.
-- `Alderville_Restoration.geojson` — area-of-interest boundary with the
-  restoration-age strata (`Restoratio` = 0_5 / 5_10 / 10_15 / 15_20 / Remnant)
+- `core_locations.csv` — 22 stratified-random plots across three land-cover
+  strata (12 Forest, 5 Herbaceous, 5 Wetland)
+- `core_samples.csv` — 110 depth samples. **Note:** the SOC and bulk-density
+  values are SYNTHETIC (no lab measurements were provided) — mock profiles for
+  demoing the pipeline only, **not for reporting**.
+- `strata_map_aoi.geojson` — area-of-interest boundary; the per-stratum
+  land-cover areas (Forest / Herbaceous / Wetland) are stored in its properties
+  (ESRI 10 m 2024, ESA 6-class)
 
-Sites and synthetic profiles are regenerated from the sampling-design KML by
-`Pre-Analysis Data Preparation/Sampling_Design/build_field_data_from_kml.py`.
+Plots and synthetic profiles are regenerated from the sampling-plot CSV + AOI by
+`Pre-Analysis Data Preparation/Sampling_Design/build_field_data_from_landcover.py`.
 
 ---
 

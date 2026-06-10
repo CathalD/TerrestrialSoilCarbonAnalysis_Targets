@@ -26,6 +26,26 @@ simple_extrapolation <- function(stratum_summary, cfg) {
       .groups = "drop"
     )
 
+  # Explicit per-stratum areas (hectares) — e.g. from a land-cover summary where
+  # strata are raster classes rather than vector polygons. Used directly for
+  # absolute totals when present (takes precedence over AOI polygon geometry).
+  strata_areas <- cfg$STRATUM_AREAS
+  if (!is.null(strata_areas) && length(strata_areas) > 0) {
+    area_df <- data.frame(stratum = names(strata_areas),
+                          area_m2 = as.numeric(strata_areas) * 10000)
+    per_stratum <- per_stratum |>
+      left_join(area_df, by = "stratum") |>
+      mutate(total_stock_kg  = stock_density_kg_m2 * area_m2,
+             total_stock_MgC = total_stock_kg / 1000)
+    unmatched <- per_stratum$stratum[is.na(per_stratum$area_m2)]
+    if (length(unmatched) > 0)
+      warning(sprintf("[step2] STRATUM_AREAS has no area for: %s (their totals are NA).",
+                      paste(unmatched, collapse = ", ")))
+    message(sprintf("[step2] Absolute totals from STRATUM_AREAS: %.1f ha across %d strata.",
+                    sum(area_df$area_m2, na.rm = TRUE) / 10000, nrow(area_df)))
+    return(per_stratum)
+  }
+
   aoi_path      <- cfg$AOI_FILE
   stratum_field <- cfg$AOI_STRATUM_FIELD
 

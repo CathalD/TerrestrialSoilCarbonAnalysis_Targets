@@ -1,13 +1,15 @@
 # ============================================================================
 # TERRESTRIAL SOIL CARBON PROJECT CONFIGURATION
 # Edit the values below for your specific site and dataset.
+# (This is the tracked template; it is copied to soil_carbon_config.R on first
+#  run. For a peat-dominated site, start from soil_carbon_config.HBL.example.R.)
 # ============================================================================
 
 # ── Project metadata ──────────────────────────────────────────────────────────
-PROJECT_NAME     <- "Alderville_RestorationChronosequence_2026"
-PROJECT_SCENARIO <- "PROJECT"   # BASELINE | PROJECT | CONTROL | DEGRADED
+PROJECT_NAME     <- "JamesBayLowlands_LandCover_2026"
+PROJECT_SCENARIO <- "BASELINE"   # BASELINE | PROJECT | CONTROL | DEGRADED
 MONITORING_YEAR  <- 2026
-PROJECT_LOCATION <- "Alderville First Nation, Ontario, Canada (Pemadash / BOS prairie restoration)"
+PROJECT_LOCATION <- "James Bay Lowlands, Ontario, Canada (Cochrane District)"
 
 # ── Google Earth Engine ───────────────────────────────────────────────────────
 GEE_PROJECT <- "north-star-project-470316"
@@ -19,34 +21,54 @@ DATA_GLOBAL_DIR  <- file.path(PRE_ANALYSIS_DIR, "data_global")
 COVARIATES_DIR   <- file.path(PRE_ANALYSIS_DIR, "covariates")
 
 # Remote sensing covariate raster (multi-band GEE export — 28 terrestrial bands)
-COVARIATE_RASTER <- file.path(COVARIATES_DIR, "TerrestrialSOC_Covariate_Snapshot_25m_2020_2023.tif")
+COVARIATE_RASTER <- file.path(COVARIATES_DIR, "JamesBay_Covariate_Snapshot.tif")
 
 # Area of Interest boundary (GeoJSON, shapefile, or GPKG)
-AOI_FILE <- file.path(DATA_RAW_DIR, "Alderville_Restoration.geojson")
+AOI_FILE <- file.path(DATA_RAW_DIR, "strata_map_aoi.geojson")
 
-# Column in AOI_FILE that identifies land-use strata.
-# Set to NULL for a whole-site total (no per-stratum area breakdown).
-AOI_STRATUM_FIELD <- "Restoratio"  # restoration-age class attribute in the AOI polygons
+# Column in AOI_FILE that identifies strata, OR NULL.
+# This AOI is a single polygon whose per-stratum land-cover AREAS are given in
+# STRATUM_AREAS below (the strata themselves come from the ESRI 10 m land cover,
+# not from separate polygons), so there is no per-polygon stratum field.
+AOI_STRATUM_FIELD <- NULL
 
-# ── Restoration-age strata ────────────────────────────────────────────────────
-# Strata = years since prairie restoration began, taken from the AOI polygon
-# attribute `Restoratio` (see AOI_STRATUM_FIELD). Codes must match the `stratum`
-# column in core_locations.csv exactly — and the geojson, which cannot be renamed.
-VALID_STRATA <- c("0_5", "5_10", "10_15", "15_20", "Remnant")
+# ── Land-cover strata (ESRI 10 m 2024, ESA 6-class) ───────────────────────────
+# Codes must match the `stratum` column in core_locations.csv exactly.
+VALID_STRATA <- c("Forest", "Herbaceous", "Wetland")
 
 STRATUM_COLORS <- c(
-  "0_5"     = "#d4edda",   # 0–5 yrs — very light green (recently restored)
-  "5_10"    = "#92d6a8",   # 5–10 yrs
-  "10_15"   = "#41a06b",   # 10–15 yrs
-  "15_20"   = "#1a5e3a",   # 15–20 yrs — dark green (established)
-  "Remnant" = "#8c6d31"    # never-tilled remnant prairie (reference)
+  "Forest"     = "#1b5e20",   # boreal forest — dark green
+  "Herbaceous" = "#c9a227",   # open / grassy — gold
+  "Wetland"    = "#2b7ca3"    # wetland / organic — teal-blue
 )
 
+# ── Per-stratum areas (hectares) ──────────────────────────────────────────────
+# Land-cover class areas within the AOI (from strata_map_aoi.geojson properties).
+# Used to scale per-stratum carbon density to absolute total stocks.
+STRATUM_AREAS <- c(
+  "Forest"     = 1448.9,
+  "Herbaceous" =  215.9,
+  "Wetland"    =  580.4
+)
+
+# ── Bulk density defaults ─────────────────────────────────────────────────────
+# Applied where bulk_density_g_cm3 is missing in the sample data (g/cm³).
+# Boreal soils: mineral uplands (Forest/Herbaceous) vs. organic wetland.
+BD_DEFAULTS <- list(
+  "Forest"     = 0.90,   # boreal forest mineral soil
+  "Herbaceous" = 1.10,   # open mineral soil
+  "Wetland"    = 0.15    # organic / peat — much lower
+)
+
+# ── Soil profile type ─────────────────────────────────────────────────────────
+# "mineral" (default): exponential-decay extrapolation below the deepest sample.
+# Wetland here is treated within the standard 0–100 cm scheme. If your wetlands
+# are deep peat, switch to the organic / deep-peat setup in
+# soil_carbon_config.HBL.example.R (PROFILE_TYPE = "organic", depths to 200 cm).
+PROFILE_TYPE <- "mineral"
+
 # ── Standard depth intervals ──────────────────────────────────────────────────
-# Four-depth scheme with standard aggregates (0–30 cm, 0–100 cm)
-# and the GlobalSoilMap specification.
-# Depths 1–2 aggregate to the standard 0–30 cm topsoil pool.
-# Depths 1–4 aggregate to the standard 0–100 cm full-profile pool.
+# Four-depth scheme with standard aggregates (0–30 cm, 0–100 cm).
 DEPTH_MIDPOINTS <- c(7.5, 22.5, 45, 80)
 
 DEPTH_INTERVALS <- data.frame(
@@ -56,36 +78,15 @@ DEPTH_INTERVALS <- data.frame(
   thickness_cm   = c(15, 15, 30, 40)
 )
 
-# ── Bulk density defaults ─────────────────────────────────────────────────────
-# Applied where bulk_density_g_cm3 is missing in the sample data (g/cm³).
-# Restored prairie mineral soils: bulk density declines as restoration age and
-# organic-matter inputs increase (Gregorich et al. 1994; Jandl et al. 2014).
-BD_DEFAULTS <- list(
-  "0_5"     = 1.30,   # Recently restored ex-cropland — still compacted
-  "5_10"    = 1.20,   # Early recovery — some aggregate formation
-  "10_15"   = 1.12,   # Mid-recovery — improving structure and OM
-  "15_20"   = 1.05,   # Well-established — lower BD from root inputs
-  "Remnant" = 0.95    # Never-tilled remnant prairie — lowest BD
-)
-
 # ── QC thresholds ─────────────────────────────────────────────────────────────
 QC_SOC_MIN <- 0      # g/kg — minimum valid SOC
-QC_SOC_MAX <- 600    # g/kg — max for mineral soils; raise to ~900 for peatland sites
-QC_BD_MIN  <- 0.05   # g/cm³ — allow low values for organic/peat horizons
+QC_SOC_MAX <- 600    # g/kg — covers organic wetland soils (~45–55% C)
+QC_BD_MIN  <- 0.03   # g/cm³ — allow low values for organic/wetland horizons
 QC_BD_MAX  <- 2.0    # g/cm³ — typical upper limit for mineral soils
 
 # ── Remote sensing band labels ────────────────────────────────────────────────
 # Maps GEE raster band names → human-readable labels for RF importance plots.
 # Canonical 28-band terrestrial stack (see R/preanalysis/gee_covariates.R).
-#
-# Literature context:
-#   NDVI, EVI, and LSWI are the strongest optical predictors of SOC in
-#   mineral soils (Guo et al. 2022; Hengl et al. 2017).
-#   SAR VV/VH captures soil roughness and residue cover (Paloscia et al. 2013).
-#   Climate (MAT, MAP, PET) and topography (TWI, slope) are primary drivers
-#   of SOC formation and decomposition rates (primary climate factors).
-#   Clay content (SoilGrids prior) stabilises SOC through organo-mineral
-#   associations and is one of the strongest global SOC predictors (Jobbagy & Jackson 2000).
 BAND_LABELS <- c(
   # Topography
   "elevation_m" = "Elevation (m) — drainage, temperature lapse ★",
@@ -114,10 +115,10 @@ BAND_LABELS <- c(
   # Sentinel-2 derived indices
   "NDVI_median" = "NDVI — live green vegetation density ★",
   "EVI_median"  = "EVI — canopy structure (atmosphere-corrected) ★",
-  "LSWI_median" = "LSWI — land surface water index / soil moisture",
+  "LSWI_median" = "LSWI — land surface water index / soil moisture ★",
   "SAVI_median" = "SAVI — vegetation with soil-brightness correction",
   "NDMI_median" = "NDMI — plant water stress & canopy moisture ★",
-  "BSI_median"  = "BSI — bare soil / exposed mineral surface ★",
+  "BSI_median"  = "BSI — bare soil / exposed mineral surface",
 
   # Climate
   "MAT_C"        = "MAT — mean annual temperature (°C) ★",

@@ -31,8 +31,8 @@ MONITORING_YEAR  <- 2025
 
 # Stratum codes are user-defined — they must match your core_locations.csv.
 # Example (land use): F = Forest, GL = Grassland, CL = Cropland, PL = Peatland.
-# The bundled example project instead uses restoration-age classes
-# (0_5, 5_10, 10_15, 15_20, Remnant).
+# The bundled example project uses land-cover classes
+# (Forest, Herbaceous, Wetland).
 VALID_STRATA <- c("F", "GL", "CL")
 
 # Path to your 28-band GEE covariate raster (required for RF maps)
