@@ -26,6 +26,26 @@ simple_extrapolation <- function(stratum_summary, cfg) {
       .groups = "drop"
     )
 
+  # Explicit per-stratum areas (hectares) — e.g. from a land-cover summary where
+  # strata are raster classes rather than vector polygons. Used directly for
+  # absolute totals when present (takes precedence over AOI polygon geometry).
+  strata_areas <- cfg$STRATUM_AREAS
+  if (!is.null(strata_areas) && length(strata_areas) > 0) {
+    area_df <- data.frame(stratum = names(strata_areas),
+                          area_m2 = as.numeric(strata_areas) * 10000)
+    per_stratum <- per_stratum |>
+      left_join(area_df, by = "stratum") |>
+      mutate(total_stock_kg  = stock_density_kg_m2 * area_m2,
+             total_stock_MgC = total_stock_kg / 1000)
+    unmatched <- per_stratum$stratum[is.na(per_stratum$area_m2)]
+    if (length(unmatched) > 0)
+      warning(sprintf("[step2] STRATUM_AREAS has no area for: %s (their totals are NA).",
+                      paste(unmatched, collapse = ", ")))
+    message(sprintf("[step2] Absolute totals from STRATUM_AREAS: %.1f ha across %d strata.",
+                    sum(area_df$area_m2, na.rm = TRUE) / 10000, nrow(area_df)))
+    return(per_stratum)
+  }
+
   aoi_path      <- cfg$AOI_FILE
   stratum_field <- cfg$AOI_STRATUM_FIELD
 
@@ -130,13 +150,23 @@ map_strata_stocks <- function(stratum_summary, cfg) {
     mutate(stratum = as.character(.data[[stratum_field]])) |>
     left_join(per_stratum, by = "stratum")
 
-  # Label points (guarded — a labelling failure must not fail the target).
-  lab_sf <- tryCatch(suppressWarnings(sf::st_point_on_surface(aoi_stock)),
-                     error = function(e) NULL)
+  # Reproject to a local UTM zone so geometry is planar — keeps label placement
+  # accurate and avoids the "st_point_on_surface ... longitude/latitude" warning.
+  aoi_stock <- tryCatch({
+    if (!is.na(sf::st_crs(aoi_stock)) && isTRUE(sf::st_is_longlat(aoi_stock))) {
+      bb    <- sf::st_bbox(aoi_stock)
+      lon_c <- as.numeric((bb["xmin"] + bb["xmax"]) / 2)
+      lat_c <- as.numeric((bb["ymin"] + bb["ymax"]) / 2)
+      epsg  <- (if (lat_c >= 0) 32600 else 32700) + floor((lon_c + 180) / 6) + 1
+      sf::st_transform(aoi_stock, epsg)
+    } else aoi_stock
+  }, error = function(e) aoi_stock)
 
   mk <- function(fill_col, title) {
-    g <- ggplot(aoi_stock) +
+    ggplot(aoi_stock) +
       geom_sf(aes(fill = .data[[fill_col]]), colour = "grey25", linewidth = 0.2) +
+      geom_sf_label(aes(label = stratum), size = 2.4, colour = "grey10",
+                    fill = "white", alpha = 0.7, linewidth = 0) +
       scale_fill_gradient(name = "kg C/m²", low = "#f6e0c5", high = "#7f3b08",
                           na.value = "grey85") +
       theme_bw(base_size = 11) +
@@ -144,11 +174,6 @@ map_strata_stocks <- function(stratum_summary, cfg) {
             axis.ticks = element_blank(), panel.grid = element_blank()) +
       labs(title = title,
            subtitle = "Per-stratum mean across cores, extrapolated across the area of interest")
-    if (!is.null(lab_sf))
-      g <- g + geom_sf_label(data = lab_sf, aes(label = stratum), size = 2.4,
-                             colour = "grey10", fill = "white", alpha = 0.7,
-                             label.size = 0)
-    g
   }
 
   message(sprintf("[step2-map] Thematic map built: %d AOI polygons, %d strata.",

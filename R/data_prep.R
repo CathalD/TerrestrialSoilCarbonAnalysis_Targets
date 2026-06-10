@@ -14,6 +14,18 @@ load_raw_data <- function(locations_path, samples_path, cfg = NULL) {
   locations <- read_csv(locations_path, show_col_types = FALSE)
   samples   <- read_csv(samples_path,   show_col_types = FALSE)
 
+  # SOC may be supplied directly (soc_g_kg) or derived from loss-on-ignition /
+  # organic-matter percent (peat workflows): soc_g_kg = OM% x 10 x OM_TO_C_FACTOR.
+  if (!"soc_g_kg" %in% names(samples)) {
+    om_col <- intersect(c("organic_matter_pct", "loi_pct", "om_pct"), names(samples))
+    if (length(om_col) >= 1) {
+      om_to_c <- if (is.null(cfg$OM_TO_C_FACTOR)) 0.58 else cfg$OM_TO_C_FACTOR
+      samples$soc_g_kg <- suppressWarnings(as.numeric(samples[[om_col[1]]])) * 10 * om_to_c
+      message(sprintf("[data_prep] Derived soc_g_kg from '%s' (x10 x %.2f C fraction).",
+                      om_col[1], om_to_c))
+    }
+  }
+
   required_loc <- c("core_id", "longitude", "latitude", "stratum")
   required_smp <- c("core_id", "depth_top_cm", "depth_bottom_cm", "soc_g_kg")
   missing_loc  <- setdiff(required_loc, names(locations))

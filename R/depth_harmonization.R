@@ -40,6 +40,12 @@ harmonize_depths <- function(cores_raw, cfg) {
     c(15, 15, 30, 40)
   }
 
+  # Profile type controls extrapolation below the deepest sample:
+  #   "mineral" (default) — exponential decay where SOC declines with depth
+  #   "organic"  (peat)   — constant carry-forward (SOC stays high and flat)
+  profile_type <- cfg$PROFILE_TYPE %||% "mineral"
+  max_factor   <- cfg$MAX_EXTRAP_FACTOR %||% 2.5
+
   cores_qa <- cores_raw |>
     filter(!is.na(depth_cm), !is.na(soc_g_kg), !is.na(bulk_density_g_cm3)) |>
     arrange(core_id, depth_cm)
@@ -84,12 +90,12 @@ harmonize_depths <- function(cores_raw, cfg) {
       cor(depths, values, method = "spearman", use = "complete.obs"),
       error = function(e) NA_real_
     )
-    if (!is.na(rho) && rho < -0.3 && length(depths) >= 3)
+    if (profile_type != "organic" && !is.na(rho) && rho < -0.3 && length(depths) >= 3)
       try(decay <- lm(log(values + 0.1) ~ depths), silent = TRUE)
     sapply(targets, function(d) {
       if (d <= max_d) {
         fn(d)
-      } else if (d > max_d * 2.5) {
+      } else if (d > max_d * max_factor) {
         NA_real_
       } else if (!is.null(decay) && coef(decay)[2] < 0) {
         exp(predict(decay, newdata = data.frame(depths = d))) - 0.1

@@ -31,8 +31,8 @@ MONITORING_YEAR  <- 2025
 
 # Stratum codes are user-defined — they must match your core_locations.csv.
 # Example (land use): F = Forest, GL = Grassland, CL = Cropland, PL = Peatland.
-# The bundled example project instead uses restoration-age classes
-# (0_5, 5_10, 10_15, 15_20, Remnant).
+# The bundled example project uses land-cover classes
+# (Forest, Herbaceous, Wetland).
 VALID_STRATA <- c("F", "GL", "CL")
 
 # Path to your 28-band GEE covariate raster (required for RF maps)
@@ -49,6 +49,13 @@ COVARIATE_RASTER <- "Pre-Analysis Data Preparation/covariates/your_raster.tif"
 | PL   | Peatland  | 0.15 g/cm³ |
 
 Add or adjust these in the `BD_DEFAULTS` list in `soil_carbon_config.R`.
+
+**Peatlands / other biomes.** For organic (peat) soils, start from
+`soil_carbon_config.HBL.example.R` (`cp soil_carbon_config.HBL.example.R soil_carbon_config.R`):
+it uses land-cover strata, ~10× lower peat bulk densities, a deeper depth scheme
+(to 200 cm), `PROFILE_TYPE = "organic"` (constant-with-depth extrapolation instead
+of mineral-soil decay), and accepts loss-on-ignition input via `OM_TO_C_FACTOR`
+(`soc_g_kg = organic_matter_% × 10 × OM_TO_C_FACTOR`).
 
 ---
 
