@@ -29,7 +29,7 @@ list(
 
   # ── STEP 2: SIMPLE EXTRAPOLATION ──────────────────────────────────────────
   tar_target(step2_extrapolation, simple_extrapolation(stratum_summary, cfg)),
-  tar_target(step2_strata_map,    map_strata_stocks(stratum_summary, cfg)),
+  tar_target(step2_strata_map,    map_strata_stocks(stratum_summary, cores_harmonized, cfg)),
 
   # ── SAVE RAW OUTPUTS (figures + tables) for partners ──────────────────────
   tar_target(nonspatial_outputs,

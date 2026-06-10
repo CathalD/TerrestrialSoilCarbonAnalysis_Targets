@@ -20,8 +20,11 @@ write_nonspatial_outputs <- function(eda_plots, harmonized_eda, strata_map,
 
   paths <- character(0)
   save_fig <- function(plot, name, w = 8, h = 5) {
-    if (is.null(plot)) return(invisible())
     f <- file.path(fig_dir, name)
+    if (is.null(plot)) {                 # remove any stale file from a previous run
+      if (file.exists(f)) unlink(f)
+      return(invisible())
+    }
     ggsave(f, plot, width = w, height = h, dpi = 300, bg = "white")
     paths <<- c(paths, f)
   }

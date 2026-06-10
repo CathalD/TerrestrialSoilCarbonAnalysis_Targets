@@ -121,19 +121,19 @@ step2_extrapolation |>
 
 ## Thematic stock maps
 
-Mean carbon stock per stratum (averaged across cores) painted onto the area of
-interest — a simple spatial extrapolation that needs **no** remote-sensing
-covariates. Each stratum polygon is filled with its mean stock (Mg C/ha),
-assuming a uniform value within the stratum.
+A simple spatial view of the carbon stocks that needs **no** remote-sensing
+covariates. Where the area of interest provides per-stratum polygons, each is
+filled with its mean stock (kg C/m²); otherwise the sampling plots are shown
+over the AOI, coloured by their carbon stock.
 
 ```{r}
-#| fig-cap: "Mean carbon stock by stratum across the area of interest."
+#| fig-cap: "Carbon stock across the area of interest."
 #| fig-width: 9
 #| fig-height: 5
 m <- step2_strata_map
 if (is.null(m$full_profile)) {
-  cat("No AOI polygon with a stratum field is configured — set `AOI_FILE` and",
-      "`AOI_STRATUM_FIELD` in `soil_carbon_config.R` to enable the thematic map.")
+  cat("No thematic map could be produced — it needs either per-stratum AOI",
+      "polygons (set `AOI_STRATUM_FIELD`) or plot coordinates.")
 } else {
   print(m$topsoil)
   print(m$full_profile)
